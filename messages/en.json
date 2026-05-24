@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Kevin De La Fuente — Fullstack Developer",
+    "description": "Portfolio of Kevin De La Fuente. Fullstack Developer (Java · Spring Boot · Next.js · React). Open to my first formal IT role."
+  },
+  "hero": {
+    "phase": "Phase 0 · Setup",
+    "name": "Kevin De La Fuente",
+    "role": "Fullstack Developer",
+    "stack": "Java · Spring Boot · Next.js · React",
+    "subtitle": "I build end-to-end web products. Open to my first formal IT role.",
+    "chips": {
+      "next": "Next.js 16",
+      "react": "React 19",
+      "ts": "TypeScript",
+      "tailwind": "Tailwind 4",
+      "three": "Three.js (next)"
+    }
+  },
+  "status": {
+    "title": "Next steps",
+    "items": {
+      "i18n": "Configure next-intl with es / en locales",
+      "deploy": "Push to GitHub + connect Vercel",
+      "phase1": "Start Phase 1 (Hero, About, Projects, Stack, Contact)"
+    }
+  },
+  "langSwitch": {
+    "label": "Language",
+    "es": "Español",
+    "en": "English"
+  }
+}

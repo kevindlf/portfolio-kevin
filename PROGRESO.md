@@ -11,7 +11,7 @@
 
 **Fase activa:** Fase 0 — Setup
 **Última actualización:** 2026-05-24 (sesión 2 — Claude Code)
-**Próxima acción:** Instalar deps Fase 0 restantes (`next-intl`, `three`, `@react-three/fiber`, `@react-three/drei`, `framer-motion`), configurar tokens Tailwind del CLAUDE.md §5, configurar `next-intl` con locales `es`/`en`, push a GitHub y conectar Vercel.
+**Próxima acción:** Push a GitHub (`kevindelafuente/portfolio` público), conectar Vercel y deploy "Hello World" bilingüe. Después: cierre Fase 0 y arranque Fase 1.
 
 ---
 
@@ -85,13 +85,66 @@
 - Estrategia de conflictos en bootstrap futuro: staging fuera del cwd (la flag `--yes` no salta el check de directorio no vacío)
 - `AGENTS.md` de Next se conserva (warning útil sobre breaking changes en N16)
 
-**Decisiones abiertas** (sin novedades respecto a sesión 1):
-- Color accent (violeta / cyan / verde lima)
+**Decisiones abiertas:**
 - Form contacto (Resend vs `mailto:`)
 - Dominio (custom vs Vercel)
 - CV PDF en header (sí/no)
-- Repo GitHub (público/privado)
 - Twitter/X handle para meta tags
+
+---
+
+### Sesión 3 — 2026-05-24 (Claude Code, continuación)
+**Objetivo:** Instalar deps restantes Fase 0 y aplicar tokens visuales.
+
+**Hecho:**
+- `npm i next-intl@4.12.0 three@0.184.0 @react-three/fiber@9.6.1 @react-three/drei@10.7.7 framer-motion@12.40.0`
+- `npm i -D @types/three@0.184.1`
+- Bug observado: primer `npm install` con args reescribió `next` a `^9.3.3` y falló ERESOLVE — corregido manualmente a `16.2.6` y re-sincronizado
+- `src/app/globals.css` reescrito con tokens CLAUDE.md §5 (dark default, `color-scheme: dark`, `@theme inline` mapeando bg/fg/accent/border, `::selection` accent, `prefers-reduced-motion` respetado)
+- `src/app/layout.tsx`: `lang="es"`, metadata real (título + descripción), body usa `var(--font-sans)`
+- Smoke test: Ready 400ms, HTTP 200 (17152 bytes)
+
+**Pendiente para próxima sesión:**
+- Configurar `next-intl` con locales `es`/`en`: middleware, `[locale]` segment, `messages/{es,en}.json` con copy de `docs/CONTENT.md`
+- `git remote add origin git@github.com:kevindelafuente/portfolio.git` + push (público)
+- Vercel link + deploy "Hello World" bilingüe
+- Reescribir `src/app/page.tsx` con nombre + titular ES como Hello World
+
+**Decisiones tomadas:**
+- Color accent: **violeta `#7c5cff`** (definitivo)
+- Tema dark por default (sin toggle light en V1, alineado con CLAUDE.md §5)
+- GitHub repo: `kevindelafuente/portfolio` público (deferred al próximo turno por scope)
+
+---
+
+### Sesión 4 — 2026-05-24 (Claude Code, continuación)
+**Objetivo:** Hello World biligüe + i18n completo.
+
+**Hecho:**
+- Hello World con tokens visibles en `src/app/[locale]/page.tsx` (nombre, role, stack chips, card "próximos pasos")
+- `src/i18n/routing.ts` — locales `['es', 'en']`, default `es`, `localePrefix: 'always'`
+- `src/i18n/navigation.ts` — `Link`, `redirect`, `usePathname`, `useRouter` locale-aware
+- `src/i18n/request.ts` — `getRequestConfig` carga `messages/{locale}.json`
+- `src/proxy.ts` — `createMiddleware(routing)` con matcher (renombrado de `middleware.ts` — Next 16 deprecó la convención)
+- `next.config.ts` — wrapped con `createNextIntlPlugin("./src/i18n/request.ts")`
+- `src/app/[locale]/layout.tsx` — `generateStaticParams`, `generateMetadata` async (lee `meta.title`/`meta.description` por locale), `setRequestLocale`, `NextIntlClientProvider`, `notFound()` si locale inválido
+- `src/app/[locale]/page.tsx` — Server Component async con `getTranslations`, usa keys `hero.*`, `status.items.*`
+- `src/components/lang-switcher.tsx` — Client Component, toggle ES/EN preservando pathname con `useRouter().replace(pathname, { locale })`, accent violeta cuando activo, disabled durante transition
+- `messages/es.json` y `messages/en.json` — namespace `meta`, `hero`, `status`, `langSwitch`
+- Smoke test: `/` → 307 a `/es`, `/es` 200 (ES copy), `/en` 200 (EN copy), `/fr` 307 (fallback default), title HTML cambia por locale, lang attribute correcto
+
+**Pendiente para próxima sesión:**
+- `git remote add origin git@github.com:kevindelafuente/portfolio.git`
+- Repo público, push initial
+- Vercel link via `vercel` CLI o dashboard
+- Deploy y verificar `/`, `/es`, `/en` en producción
+- Cerrar Fase 0 → arrancar Fase 1 (header con toggle, footer, secciones)
+
+**Decisiones tomadas:**
+- next-intl v4 con `localePrefix: 'always'` (URLs explícitas `/es/...` y `/en/...`, mejor SEO + hreflang)
+- Default locale `es` (mercado primario hispano)
+- Convención Next 16: archivo `proxy.ts` no `middleware.ts`
+- `messages/*.json` namespace plano por sección (`hero`, `status`, etc.) — facilita lazy splitting futuro si crece
 
 ---
 
@@ -103,9 +156,9 @@
 - [x] Docs base (SKILLS, CONTENT, ROADMAP, TEMPLATE_REFERENCE)
 - [ ] Skills instaladas (Kevin)
 - [x] `create-next-app` ejecutado
-- [ ] Dependencias 3D instaladas
-- [ ] `next-intl` configurado con `es` y `en`
-- [ ] Tailwind con tokens del CLAUDE.md
+- [x] Dependencias 3D + i18n instaladas (next-intl, three, R3F, drei, framer-motion)
+- [x] `next-intl` configurado con `es` y `en`
+- [x] Tailwind con tokens del CLAUDE.md (dark mode, accent violeta #7c5cff)
 - [x] Git init (hecho por create-next-app); falta push a GitHub
 - [ ] Vercel conectado
 - [ ] Primer deploy "Hello World" bilingüe funcionando
