@@ -11,7 +11,7 @@
 
 **Fase activa:** Fase 0 — Setup
 **Última actualización:** 2026-05-24 (sesión 2 — Claude Code)
-**Próxima acción:** Push a GitHub (`kevindelafuente/portfolio` público), conectar Vercel y deploy "Hello World" bilingüe. Después: cierre Fase 0 y arranque Fase 1.
+**Próxima acción:** Esperando deploy Vercel (Kevin importa `kevindlf/portfolio-kevin` por dashboard). Después: verificar prod `/es` `/en`, cerrar Fase 0, arrancar Fase 1.
 
 ---
 
@@ -134,10 +134,8 @@
 - Smoke test: `/` → 307 a `/es`, `/es` 200 (ES copy), `/en` 200 (EN copy), `/fr` 307 (fallback default), title HTML cambia por locale, lang attribute correcto
 
 **Pendiente para próxima sesión:**
-- `git remote add origin git@github.com:kevindelafuente/portfolio.git`
-- Repo público, push initial
-- Vercel link via `vercel` CLI o dashboard
-- Deploy y verificar `/`, `/es`, `/en` en producción
+- Vercel dashboard import + deploy (Kevin lo hace)
+- Verificar prod `/`, `/es`, `/en` + toggle
 - Cerrar Fase 0 → arrancar Fase 1 (header con toggle, footer, secciones)
 
 **Decisiones tomadas:**
@@ -145,6 +143,10 @@
 - Default locale `es` (mercado primario hispano)
 - Convención Next 16: archivo `proxy.ts` no `middleware.ts`
 - `messages/*.json` namespace plano por sección (`hero`, `status`, etc.) — facilita lazy splitting futuro si crece
+- GitHub handle real: `kevindlf` (no `kevindelafuente` como decía CLAUDE.md inicialmente)
+- Repo: `github.com/kevindlf/portfolio-kevin` (público) — Kevin creó el repo vacío en GitHub, push hecho desde local
+- Branch principal: `main` (renombrado de `master` antes del primer push)
+- Vercel: import vía dashboard (no CLI, evita install global)
 
 ---
 
@@ -159,8 +161,8 @@
 - [x] Dependencias 3D + i18n instaladas (next-intl, three, R3F, drei, framer-motion)
 - [x] `next-intl` configurado con `es` y `en`
 - [x] Tailwind con tokens del CLAUDE.md (dark mode, accent violeta #7c5cff)
-- [x] Git init (hecho por create-next-app); falta push a GitHub
-- [ ] Vercel conectado
+- [x] Git init (hecho por create-next-app) + push a GitHub (`kevindlf/portfolio-kevin`)
+- [ ] Vercel conectado (en curso — Kevin importa por dashboard)
 - [ ] Primer deploy "Hello World" bilingüe funcionando
 
 → Cuando todo esto esté tildado, pasar a **Fase 1**.
