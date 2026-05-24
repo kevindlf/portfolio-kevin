@@ -1,5 +1,4 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { LangSwitcher } from "@/components/lang-switcher";
 
 export default async function Home({
   params,
@@ -8,62 +7,64 @@ export default async function Home({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations();
+  const t = await getTranslations("hero");
 
   return (
-    <main className="flex flex-1 items-center justify-center px-6 py-24 md:px-12">
-      <div className="w-full max-w-6xl">
-        <div className="mb-12 flex items-center justify-between gap-4">
-          <p className="font-mono text-sm uppercase tracking-[0.2em] text-[color:var(--accent)]">
-            {t("hero.phase")}
-          </p>
-          <LangSwitcher />
+    <main className="flex flex-1 flex-col">
+      <section
+        id="hero"
+        className="relative flex min-h-[calc(100svh-4rem)] flex-1 items-center justify-center overflow-hidden px-6 py-24 md:px-12"
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10"
+        >
+          <div className="absolute left-1/2 top-1/3 h-[40rem] w-[40rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:var(--accent-glow)] blur-[120px]" />
         </div>
 
-        <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight text-[color:var(--fg)] md:text-7xl">
-          {t("hero.name")}
-        </h1>
+        <div className="w-full max-w-6xl">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-[color:var(--accent)]">
+            {t("role")}
+          </p>
 
-        <p className="mt-4 text-xl text-[color:var(--fg-muted)] md:text-2xl">
-          {t("hero.role")} ·{" "}
-          <span className="text-[color:var(--fg)]">{t("hero.stack")}</span>
-        </p>
+          <h1 className="mt-6 text-5xl font-semibold leading-[1.02] tracking-tight text-[color:var(--fg)] md:text-7xl lg:text-[5.5rem]">
+            {t("name")}
+          </h1>
 
-        <p className="mt-8 max-w-2xl text-base leading-relaxed text-[color:var(--fg-muted)] md:text-lg">
-          {t("hero.subtitle")}
-        </p>
+          <p className="mt-8 max-w-2xl text-2xl leading-tight text-[color:var(--fg)] md:text-3xl">
+            {t("tagline")}
+          </p>
 
-        <div className="mt-10 flex flex-wrap items-center gap-3 font-mono text-xs">
-          {(["next", "react", "ts", "tailwind"] as const).map((k) => (
-            <span
-              key={k}
-              className="rounded-full border border-[color:var(--border)] bg-[color:var(--bg-elevated)] px-3 py-1 text-[color:var(--fg-muted)]"
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-[color:var(--fg-muted)] md:text-lg">
+            {t("subtitle")}
+          </p>
+
+          <div className="mt-10 flex flex-wrap items-center gap-3">
+            <a
+              href="#projects"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-[color:var(--accent)] px-6 font-mono text-sm font-medium text-[color:var(--bg)] transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
             >
-              {t(`hero.chips.${k}`)}
-            </span>
-          ))}
-          <span className="rounded-full border border-[color:var(--accent)] bg-[color:var(--accent-glow)] px-3 py-1 text-[color:var(--accent)]">
-            {t("hero.chips.three")}
-          </span>
+              {t("ctaPrimary")}
+              <span aria-hidden="true" className="ml-2">
+                ↓
+              </span>
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--bg-elevated)] px-6 font-mono text-sm font-medium text-[color:var(--fg)] transition-colors hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
+            >
+              {t("ctaSecondary")}
+            </a>
+          </div>
         </div>
 
         <div
-          className="mt-16 rounded-2xl border border-[color:var(--border)] bg-[color:var(--bg-elevated)] p-6"
-          aria-label={t("status.title")}
+          aria-hidden="true"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 font-mono text-[0.6rem] uppercase tracking-[0.4em] text-[color:var(--fg-muted)]"
         >
-          <p className="font-mono text-xs uppercase tracking-widest text-[color:var(--fg-muted)]">
-            {t("status.title")}
-          </p>
-          <ul className="mt-3 space-y-2 text-sm text-[color:var(--fg)]">
-            {(["i18n", "deploy", "phase1"] as const).map((k) => (
-              <li key={k}>
-                <span className="text-[color:var(--accent)]">→</span>{" "}
-                {t(`status.items.${k}`)}
-              </li>
-            ))}
-          </ul>
+          scroll ↓
         </div>
-      </div>
+      </section>
     </main>
   );
 }
