@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Kevin De La Fuente
 
-## Getting Started
+Portfolio personal de Kevin De La Fuente, Fullstack Developer (Java · Spring
+Boot · Next.js · React) basado en Mendoza, Argentina.
 
-First, run the development server:
+🌐 **En vivo:** _pendiente de deploy_
+💼 **LinkedIn:** [linkedin.com/in/kevindelafuente](https://linkedin.com/in/kevindelafuente)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Stack
+
+- **Next.js 16** (App Router) + **React 19** + **TypeScript 5 strict**
+- **Three.js** + **@react-three/fiber** para escenas 3D inmersivas
+- **Tailwind CSS 4** + **shadcn/ui**
+- **next-intl** para ES/EN
+- **framer-motion** para transiciones
+- Deploy en **Vercel**
+
+Inspiración visual (no copiado): [davidhckh/portfolio-2025](https://github.com/davidhckh/portfolio-2025).
+Stack distinto, contenido propio, identidad propia.
+
+---
+
+## Estructura
+
+```
+portfolio-kevin/
+├── CLAUDE.md              ← contexto maestro (LEER ANTES DE CODEAR)
+├── .claude/
+│   └── agents/            ← 5 agentes especializados
+├── docs/
+│   ├── SKILLS.md          ← skills recomendadas
+│   ├── TEMPLATE_REFERENCE.md
+│   ├── CONTENT.md         ← copy ES/EN
+│   └── ROADMAP.md         ← plan por fases
+├── public/                ← assets (favicon, screenshots)
+└── src/                   ← código (pendiente, ver ROADMAP fase 0)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Empezar a trabajar
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Leer `CLAUDE.md`** — contexto, stack, reglas, decisiones.
+2. **Leer `docs/ROADMAP.md`** — qué fase toca y qué tareas tiene.
+3. **Instalar skills** desde `docs/SKILLS.md`.
+4. **Fase 0 del roadmap:**
+   ```bash
+   npx create-next-app@latest . --typescript --tailwind --app --src-dir
+   npm i three @react-three/fiber @react-three/drei framer-motion next-intl
+   ```
+5. **Cada sesión termina con commit + push.** Cada fase termina con deploy.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Agentes disponibles
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Desde Claude Code, invocar con `@<nombre>`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `@frontend-designer` — UI, Tailwind, a11y, responsive
+- `@three-js-specialist` — escenas R3F, shaders, performance
+- `@content-translator` — sincronizar messages/{es,en}.json
+- `@seo-optimizer` — metadata, OG, JSON-LD, Core Web Vitals
+- `@code-reviewer` — review pre-merge obligatorio
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Reglas no negociables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Ver `CLAUDE.md` sección 9. Las más importantes:
+
+- Todo string visible va via `next-intl` (nunca hardcoded)
+- `prefers-reduced-motion` respetado siempre
+- Lighthouse ≥ 90 performance, ≥ 95 a11y, = 100 SEO
+- Cero copia literal del template de David Hck
+- Solo los proyectos reales (Catan Phones y Velour) — no inventar
