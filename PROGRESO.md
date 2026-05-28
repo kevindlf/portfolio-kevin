@@ -207,7 +207,7 @@
 - Identidad git: config **LOCAL** con noreply `165217130+kevindlf@users.noreply.github.com` (no global). Razón: Vercel Hobby rechaza deploy si el commit author no mapea a la cuenta owner; máquina compartida entre clientes. Guardado en memoria de Claude
 - About columna derecha = card de datos (no foto, no stats numéricas)
 - Componentes flat en `src/components/` (no subcarpetas del CLAUDE.md §6) — sigue convención header/footer de sesión 5
-- Claude acreditado en 3 lugares (footer + stack + About p3), NO en stack de proyectos (Catan/Velour usan Gemini, no Claude)
+- Claude acreditado en footer + Stack/Integraciones + About p3 + stack de ambos proyectos. Aclaración de Kevin (2026-05-28): el DESARROLLO (diseño, código, BD) lo hizo con Claude y Gemini en paralelo (alternaba por límite de tokens); los chatbots de Catan/Velour integran Gemini (API). Claude figura como herramienta de build, no como integración de producto
 - Contacto V1: mailto + LinkedIn, sin form Resend (deferred a Fase 2)
 - Tech names (chips) como constantes en componentes, no vía i18n (no se traducen)
 
