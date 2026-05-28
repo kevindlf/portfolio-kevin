@@ -9,9 +9,11 @@
 
 ## Estado actual
 
-**Fase activa:** Fase 0 — Setup
-**Última actualización:** 2026-05-24 (sesión 2 — Claude Code)
-**Próxima acción:** Esperando deploy Vercel (Kevin importa `kevindlf/portfolio-kevin` por dashboard). Después: verificar prod `/es` `/en`, cerrar Fase 0, arrancar Fase 1.
+**Fase activa:** Fase 1 — V1 funcional
+**Última actualización:** 2026-05-24 (sesión 5 — Claude Code)
+**URL prod:** https://portfolio-kevin-psi.vercel.app
+**Repo:** https://github.com/kevindlf/portfolio-kevin
+**Próxima acción:** Sección About → copy oficial CLAUDE.md §4.2 / CONTENT.md, layout 2-col en desktop (texto + asset visual o stats).
 
 ---
 
@@ -150,6 +152,37 @@
 
 ---
 
+### Sesión 5 — 2026-05-24 (Claude Code, arranque Fase 1)
+**Objetivo:** Header + Footer + Hero real con copy oficial.
+
+**Hecho:**
+- `messages/{es,en}.json` reescritos: namespaces `nav`, `footer` agregados, `hero` con copy oficial CONTENT.md (tagline, subtitle, ctaPrimary, ctaSecondary). Removidos placeholders Fase 0 (phase/chips/status)
+- `src/components/header.tsx` (Server) — sticky top-0 con backdrop-blur, logo `kdlf.` (con punto accent), nav anchors ocultos en mobile (#about #projects #stack #contact), LangSwitcher
+- `src/components/footer.tsx` (Server) — copyright dinámico con ICU `{year}`, links GitHub `kevindlf`/LinkedIn `kevindelafuente`/Email `delafuentekevin204@gmail.com`, builtWith
+- `src/app/[locale]/layout.tsx` — Header + main + Footer dentro de `NextIntlClientProvider`, `<body id="top">` para link "home" del header
+- `src/app/[locale]/page.tsx` reescrito — Hero estático: eyebrow role (mono uppercase accent), H1 nombre (5xl→7xl→5.5rem), tagline 2-3xl, subtitle muted, CTA primario violeta sólido con hover translate-y + focus-visible outline, CTA secundario border + bg-elevated, glow accent decorativo absoluto (blur 120px) aria-hidden, indicador "scroll ↓" bottom
+- 3 commits separados (uno por scope): `chore(i18n)`, `feat(layout)`, `feat(hero)`
+- Bug observado: PowerShell heredoc `@'...'@` falla con char `↓` en el body — workaround: escribir mensaje a archivo + `git commit -F`
+- Push: `c08d42b..b1d27fb main -> main`
+- Deploy prod auto-Vercel verificado (~60s): https://portfolio-kevin-psi.vercel.app con header/hero/footer en ambos locales
+
+**Pendiente para próxima sesión:**
+- Sección About (`#about`) — copy oficial CLAUDE.md §4.2 + CONTENT.md
+- Sección Proyectos (`#projects`) — cards Catan Phones + Velour Fragancias (Kevin pasa paths de screenshots)
+- Sección Stack (`#stack`) — grid agrupado por categoría
+- Sección Contacto (`#contact`) — email + LinkedIn (sin form todavía)
+- Metadata SEO + JSON-LD Person
+
+**Decisiones tomadas:**
+- Logo header: `kdlf.` (iniciales con punto accent) — más corto que nombre completo, espacio para nav
+- Nav mobile: oculto en este turno (`hidden md:flex`), mobile menu = Fase 2 si suma
+- Anchors single-page (`#about` etc.) — no rutas separadas, todo scroll dentro de `/{locale}`
+- Footer links externos: 3 fijos (GitHub, LinkedIn, Email) — no se traducen, son destinos
+- Hero: glow violeta decorativo en lugar de partículas 3D (eso es Fase 2)
+- Convención commits Fase 1: **uno por sección/scope** (`feat(header)`, `feat(hero)`, etc.) confirmado funcionando
+
+---
+
 ## Checklist Fase 0 — Setup
 
 - [x] Estructura del proyecto creada
@@ -162,10 +195,10 @@
 - [x] `next-intl` configurado con `es` y `en`
 - [x] Tailwind con tokens del CLAUDE.md (dark mode, accent violeta #7c5cff)
 - [x] Git init (hecho por create-next-app) + push a GitHub (`kevindlf/portfolio-kevin`)
-- [ ] Vercel conectado (en curso — Kevin importa por dashboard)
-- [ ] Primer deploy "Hello World" bilingüe funcionando
+- [x] Vercel conectado (Kevin importó por dashboard)
+- [x] Primer deploy "Hello World" bilingüe funcionando (https://portfolio-kevin-psi.vercel.app)
 
-→ Cuando todo esto esté tildado, pasar a **Fase 1**.
+→ **Fase 0 CERRADA 2026-05-24.** Arrancar **Fase 1**.
 
 ---
 
@@ -173,9 +206,9 @@
 
 _(no arrancar hasta cerrar Fase 0)_
 
-- [ ] Header con toggle ES/EN
-- [ ] Footer minimal
-- [ ] Hero estático (sin 3D todavía)
+- [x] Header con toggle ES/EN (sticky, blur, nav anchors)
+- [x] Footer minimal (copyright dinámico, GitHub/LinkedIn/Email, builtWith)
+- [x] Hero estático (sin 3D todavía) — nombre + tagline + 2 CTAs + glow accent
 - [ ] Sección About
 - [ ] Sección Proyectos (Catan Phones + Velour)
 - [ ] Sección Stack
