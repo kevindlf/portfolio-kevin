@@ -9,7 +9,7 @@ export const PERSON = {
   country: "AR",
   university: "Universidad Champagnat",
   github: "https://github.com/kevindlf",
-  linkedin: "https://linkedin.com/in/kevindelafuente",
+  linkedin: "https://www.linkedin.com/in/kevindelafuente-729465350/",
   knowsAbout: [
     "Java",
     "Spring Boot",

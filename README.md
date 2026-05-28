@@ -4,7 +4,7 @@ Portfolio personal de Kevin De La Fuente, Fullstack Developer (Java · Spring
 Boot · Next.js · React) basado en Mendoza, Argentina.
 
 🌐 **En vivo:** _pendiente de deploy_
-💼 **LinkedIn:** [linkedin.com/in/kevindelafuente](https://linkedin.com/in/kevindelafuente)
+💼 **LinkedIn:** [linkedin.com/in/kevindelafuente-729465350](https://www.linkedin.com/in/kevindelafuente-729465350/)
 
 ---
 

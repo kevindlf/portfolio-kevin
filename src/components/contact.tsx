@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
 const EMAIL = "delafuentekevin204@gmail.com";
-const LINKEDIN = "https://linkedin.com/in/kevindelafuente";
+const LINKEDIN = "https://www.linkedin.com/in/kevindelafuente-729465350/";
 
 export async function Contact() {
   const t = await getTranslations("contact");

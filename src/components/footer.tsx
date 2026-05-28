@@ -19,7 +19,7 @@ export async function Footer() {
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/kevindelafuente"
+            href="https://www.linkedin.com/in/kevindelafuente-729465350/"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-[color:var(--fg)]"

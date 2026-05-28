@@ -12,7 +12,7 @@ modificar componentes o agregar contenido.
 - **Dueño:** Kevin De La Fuente
 - **Ubicación:** Rivadavia, Mendoza, Argentina
 - **Email de contacto público:** delafuentekevin204@gmail.com
-- **LinkedIn:** https://linkedin.com/in/kevindelafuente
+- **LinkedIn:** https://www.linkedin.com/in/kevindelafuente-729465350/
 - **Objetivo del portfolio:** conseguir mi primera experiencia formal en IT como
   Fullstack Developer, destacando los proyectos freelance ya entregados (Catan
   Phones y Velour Fragancias) y demostrando capacidad de aprender e implementar

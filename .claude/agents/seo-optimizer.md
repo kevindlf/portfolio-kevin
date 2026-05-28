@@ -16,7 +16,7 @@ Sos el SEO optimizer del portfolio de Kevin De La Fuente.
 - **Título profesional:** Fullstack Developer
 - **Email:** delafuentekevin204@gmail.com
 - **Ubicación:** Rivadavia, Mendoza, Argentina
-- **LinkedIn:** https://linkedin.com/in/kevindelafuente
+- **LinkedIn:** https://www.linkedin.com/in/kevindelafuente-729465350/
 - **GitHub:** (pendiente — preguntar a Kevin)
 
 ## Metadata por idioma
@@ -61,7 +61,7 @@ Sos el SEO optimizer del portfolio de Kevin De La Fuente.
     "addressRegion": "Mendoza",
     "addressCountry": "AR"
   },
-  "sameAs": ["https://linkedin.com/in/kevindelafuente"],
+  "sameAs": ["https://www.linkedin.com/in/kevindelafuente-729465350/"],
   "knowsAbout": ["Java", "Spring Boot", "Next.js", "React", "TypeScript", "PostgreSQL"]
 }
 ```
