@@ -13,7 +13,7 @@
 **Última actualización:** 2026-05-28 (sesión 6 — Claude Code)
 **URL prod:** https://portfolio-kevin-psi.vercel.app
 **Repo:** https://github.com/kevindlf/portfolio-kevin
-**Próxima acción:** Solo faltan assets de Kevin para cerrar Fase 1 al 100%: screenshots de proyectos (`public/projects/`) + `og:image`. Lighthouse ya OK (Perf 94 / A11y 96 / Best 100 / SEO 100). Luego Fase 2 (Three.js hero, mobile menu, form Resend).
+**Próxima acción:** Fase 1 cerrada salvo screenshots de proyectos (Kevin pasa archivos a `public/projects/` → agregar slot de preview en cards). Lighthouse OK (94/96/100/100), og:image dinámico OK. Luego Fase 2 (Three.js hero, mobile menu, form Resend).
 
 ---
 
