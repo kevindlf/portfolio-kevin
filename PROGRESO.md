@@ -9,11 +9,11 @@
 
 ## Estado actual
 
-**Fase activa:** Fase 1 — V1 funcional
-**Última actualización:** 2026-05-24 (sesión 5 — Claude Code)
+**Fase activa:** Fase 1 — V1 funcional (5 secciones + SEO listas, falta pulido)
+**Última actualización:** 2026-05-28 (sesión 6 — Claude Code)
 **URL prod:** https://portfolio-kevin-psi.vercel.app
 **Repo:** https://github.com/kevindlf/portfolio-kevin
-**Próxima acción:** Sección About → copy oficial CLAUDE.md §4.2 / CONTENT.md, layout 2-col en desktop (texto + asset visual o stats).
+**Próxima acción:** Lighthouse ≥ 90/100/95 en prod. Después: screenshots de proyectos (Kevin pasa paths a `public/projects/`) + `og:image`. Luego cerrar Fase 1 → Fase 2 (Three.js hero, mobile menu, form Resend).
 
 ---
 
@@ -183,6 +183,42 @@
 
 ---
 
+### Sesión 6 — 2026-05-28 (Claude Code, secciones + SEO)
+**Objetivo:** Completar las 4 secciones restantes de Fase 1 + SEO + acreditar Claude.
+
+**Hecho:**
+- `src/components/about.tsx` — 2-col desktop: texto (title + p1/p2 + p3 workflow IA) + card de datos (`<dl>`: Ubicación, Formación, Foco)
+- `src/components/projects.tsx` — grid 2-col, cards Catan Phones + Velour (period, name, subtitle accent, description, chips de stack, link prod `↗`), hover border accent. Stack chips como constantes (no se traducen)
+- `src/components/stack.tsx` — grid agrupado por categoría (Backend/Frontend/DB/DevOps/Integraciones), sin skill bars
+- `src/components/contact.tsx` — title + body + CTA mailto (accent) + LinkedIn. Sin form (V1)
+- Acreditar Claude: footer.builtWith "· asistido por Claude", chip "Claude (Anthropic)" en Integraciones, `about.p3` (Claude desarrollo / Gemini producto). Uso real confirmado: Claude en dev workflow
+- SEO: `generateMetadata` con metadataBase + Open Graph + Twitter card + canonical + alternates hreflang (es/en/x-default); JSON-LD Person schema en layout; `src/app/sitemap.ts` + `robots.ts`; `src/lib/site.ts` (SITE_URL + PERSON reutilizables)
+- `messages/{es,en}.json` — namespaces `about`, `projects`, `stack`, `contact` sincronizados con CONTENT.md
+- `docs/CONTENT.md` actualizado como source of truth (card datos, labels, Claude, about.p3)
+- Commits (autor noreply): `2ca707a` feat(sections), `02f5cbb` feat(content Claude), `6978187` feat(contact), `e87d7f4` feat(seo). Push fast-forward, deploy prod verificado (~30s)
+
+**Pendiente para próxima sesión:**
+- Lighthouse ≥ 90/100/95 en prod (`/es` y `/en`)
+- Screenshots proyectos → `public/projects/` (Kevin) + slot de preview en cards
+- `og:image` (sin asset todavía)
+- Cerrar Fase 1 → Fase 2
+
+**Decisiones tomadas:**
+- Identidad git: config **LOCAL** con noreply `165217130+kevindlf@users.noreply.github.com` (no global). Razón: Vercel Hobby rechaza deploy si el commit author no mapea a la cuenta owner; máquina compartida entre clientes. Guardado en memoria de Claude
+- About columna derecha = card de datos (no foto, no stats numéricas)
+- Componentes flat en `src/components/` (no subcarpetas del CLAUDE.md §6) — sigue convención header/footer de sesión 5
+- Claude acreditado en 3 lugares (footer + stack + About p3), NO en stack de proyectos (Catan/Velour usan Gemini, no Claude)
+- Contacto V1: mailto + LinkedIn, sin form Resend (deferred a Fase 2)
+- Tech names (chips) como constantes en componentes, no vía i18n (no se traducen)
+
+**Decisiones abiertas:**
+- og:image: ¿generar asset o screenshot del hero?
+- Form contacto Resend (Fase 2) vs seguir con mailto
+- Dominio custom vs subdominio Vercel
+- CV PDF en header (sí/no), Twitter/X handle para meta tags
+
+---
+
 ## Checklist Fase 0 — Setup
 
 - [x] Estructura del proyecto creada
@@ -209,12 +245,12 @@ _(no arrancar hasta cerrar Fase 0)_
 - [x] Header con toggle ES/EN (sticky, blur, nav anchors)
 - [x] Footer minimal (copyright dinámico, GitHub/LinkedIn/Email, builtWith)
 - [x] Hero estático (sin 3D todavía) — nombre + tagline + 2 CTAs + glow accent
-- [ ] Sección About
-- [ ] Sección Proyectos (Catan Phones + Velour)
-- [ ] Sección Stack
-- [ ] Sección Contacto
-- [ ] Metadata SEO básica
-- [ ] Deploy a Vercel
+- [x] Sección About (2-col: texto + card de datos)
+- [x] Sección Proyectos (Catan Phones + Velour) — falta screenshots
+- [x] Sección Stack (grid agrupado por categoría)
+- [x] Sección Contacto (mailto + LinkedIn, sin form)
+- [x] Metadata SEO básica (OG, Twitter, hreflang, JSON-LD Person, sitemap, robots)
+- [x] Deploy a Vercel (auto en push a main)
 - [ ] Lighthouse ≥ 90 / 100 / 95
 
 ---
