@@ -56,6 +56,12 @@
     "devops": "DevOps",
     "integrations": "Integraciones"
   },
+  "contact": {
+    "title": "Trabajemos juntos",
+    "body": "Estoy abierto a roles junior fullstack o backend, tanto remoto como en Mendoza/Argentina.",
+    "emailLabel": "Email",
+    "linkedinLabel": "LinkedIn"
+  },
   "footer": {
     "copyright": "© {year} Kevin De La Fuente",
     "builtWith": "Hecho con Next.js, React y Three.js · asistido por Claude"

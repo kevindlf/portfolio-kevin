@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { About } from "@/components/about";
 import { Projects } from "@/components/projects";
 import { Stack } from "@/components/stack";
+import { Contact } from "@/components/contact";
 
 export default async function Home({
   params,
@@ -72,6 +73,7 @@ export default async function Home({
       <About />
       <Projects />
       <Stack />
+      <Contact />
     </main>
   );
 }
