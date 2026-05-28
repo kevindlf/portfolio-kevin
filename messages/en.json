@@ -22,7 +22,7 @@
     "title": "About",
     "p1": "I'm a Systems Programming Analyst (Universidad Champagnat, 2025). I specialize in independently learning and applying modern technologies — from Spring Boot 4 and Docker to Prisma, NextAuth and Gemini AI — turning them into concrete solutions tailored to each client's needs.",
     "p2": "I work with two main stacks: Java + Spring Boot with a separate Next.js frontend, or fullstack Next.js with Prisma and Supabase. In both I integrate generative AI (Gemini), Cloudinary, deploy on Vercel/Railway with Docker, and apply security best practices on my own initiative.",
-    "p3": "I use AI as a tool in my workflow: Claude for development and Gemini integrated into the product.",
+    "p3": "I use Claude and Gemini in parallel to design, code and model databases; Gemini is also integrated into the products (chatbots).",
     "facts": {
       "locationLabel": "Location",
       "locationValue": "Rivadavia, Mendoza, Argentina",

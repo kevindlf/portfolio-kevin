@@ -49,8 +49,12 @@ manda. Si hay discrepancia entre este archivo y `messages/*.json`, este gana.
 > with Docker, and apply security best practices on my own initiative.
 
 `about.p3`:
-- ES → En mi flujo de trabajo uso IA como herramienta: Claude para desarrollo y Gemini integrado en el producto.
-- EN → I use AI as a tool in my workflow: Claude for development and Gemini integrated into the product.
+- ES → Para diseñar, programar y modelar bases de datos uso Claude y Gemini en paralelo; Gemini además está integrado en los productos (chatbots).
+- EN → I use Claude and Gemini in parallel to design, code and model databases; Gemini is also integrated into the products (chatbots).
+
+> Nota: Claude y Gemini se usaron a la par para el DESARROLLO (diseño, código, BD).
+> Los chatbots de Catan/Velour integran Gemini (API). Claude figura en el stack de
+> proyectos como herramienta de build, no como integración del producto.
 
 ### Card de datos rápidos (columna derecha)
 
@@ -82,7 +86,7 @@ manda. Si hay discrepancia entre este archivo y `messages/*.json`, este gana.
 
 **Stack:** Java 21, Spring Boot 4, Spring Security, JWT, PostgreSQL, Supabase,
 Next.js 16, React 19, TypeScript, Tailwind, Docker, Railway, Vercel,
-Cloudinary, Gemini AI
+Cloudinary, Gemini AI, Claude (Anthropic)
 
 ### Velour Fragancias
 
@@ -95,7 +99,8 @@ Cloudinary, Gemini AI
 | URL prod | https://perfumeria-essence.vercel.app/ | https://perfumeria-essence.vercel.app/ |
 
 **Stack:** Next.js, React, TypeScript, Prisma, Supabase, PostgreSQL,
-NextAuth.js, Zustand, Tailwind, Cloudinary, Gemini AI, Vercel, Zod
+NextAuth.js, Zustand, Tailwind, Cloudinary, Gemini AI, Vercel, Zod,
+Claude (Anthropic)
 
 Labels de sección:
 - `projects.title` (ES) → "Proyectos" | (EN) → "Projects"

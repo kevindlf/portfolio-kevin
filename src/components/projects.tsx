@@ -20,6 +20,7 @@ const PROJECTS = [
       "Vercel",
       "Cloudinary",
       "Gemini AI",
+      "Claude (Anthropic)",
     ],
   },
   {
@@ -39,6 +40,7 @@ const PROJECTS = [
       "Gemini AI",
       "Vercel",
       "Zod",
+      "Claude (Anthropic)",
     ],
   },
 ] as const;
