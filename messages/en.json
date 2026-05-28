@@ -18,6 +18,43 @@
     "ctaPrimary": "See projects",
     "ctaSecondary": "Get in touch"
   },
+  "about": {
+    "title": "About",
+    "p1": "I'm a Systems Programming Analyst (Universidad Champagnat, 2025). I specialize in independently learning and applying modern technologies — from Spring Boot 4 and Docker to Prisma, NextAuth and Gemini AI — turning them into concrete solutions tailored to each client's needs.",
+    "p2": "I work with two main stacks: Java + Spring Boot with a separate Next.js frontend, or fullstack Next.js with Prisma and Supabase. In both I integrate generative AI (Gemini), Cloudinary, deploy on Vercel/Railway with Docker, and apply security best practices on my own initiative.",
+    "facts": {
+      "locationLabel": "Location",
+      "locationValue": "Rivadavia, Mendoza, Argentina",
+      "educationLabel": "Education",
+      "educationValue": "Systems Programming Analyst · Universidad Champagnat, 2025",
+      "focusLabel": "Focus",
+      "focusValue": "Fullstack — Java / Spring Boot · Next.js / React"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "liveLabel": "View site",
+    "catan": {
+      "name": "Catan Phones",
+      "subtitle": "Mobile phone e-commerce · Freelance fullstack",
+      "period": "Apr 2026 – May 2026",
+      "description": "Production e-commerce, end-to-end. Spring Boot 4 backend with JWT auth and a self-initiated 9-point security audit. Next.js 16 + React 19 frontend with Gemini AI chatbot and hybrid checkout via WhatsApp and Instagram. Unified admin panel for online and in-store sales."
+    },
+    "velour": {
+      "name": "Velour Fragancias",
+      "subtitle": "Perfume e-commerce · Freelance fullstack",
+      "period": "Mar 2026 – Apr 2026",
+      "description": "Full online store with catalog, persistent cart, order tracking and admin panel for both online and in-store sales. NextAuth.js v5, Prisma + Supabase, Gemini AI chatbot, Cloudinary, WhatsApp checkout. Vercel cron jobs, full SEO, rate limiting and bcrypt."
+    }
+  },
+  "stack": {
+    "title": "Tech stack",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "database": "Database",
+    "devops": "DevOps",
+    "integrations": "Integrations"
+  },
   "footer": {
     "copyright": "© {year} Kevin De La Fuente",
     "builtWith": "Built with Next.js, React and Three.js"

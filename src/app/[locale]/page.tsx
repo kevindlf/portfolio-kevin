@@ -1,4 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { About } from "@/components/about";
+import { Projects } from "@/components/projects";
+import { Stack } from "@/components/stack";
 
 export default async function Home({
   params,
@@ -65,6 +68,10 @@ export default async function Home({
           scroll ↓
         </div>
       </section>
+
+      <About />
+      <Projects />
+      <Stack />
     </main>
   );
 }

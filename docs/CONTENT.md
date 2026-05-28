@@ -48,6 +48,20 @@ manda. Si hay discrepancia entre este archivo y `messages/*.json`, este gana.
 > integrate generative AI (Gemini), Cloudinary, deploy on Vercel/Railway
 > with Docker, and apply security best practices on my own initiative.
 
+### Card de datos rápidos (columna derecha)
+
+| Clave | ES | EN |
+|---|---|---|
+| `about.title` | Sobre mí | About |
+| `about.facts.locationLabel` | Ubicación | Location |
+| `about.facts.locationValue` | Rivadavia, Mendoza, Argentina | Rivadavia, Mendoza, Argentina |
+| `about.facts.educationLabel` | Formación | Education |
+| `about.facts.educationValue` | Analista en Programación de Sistemas · Universidad Champagnat, 2025 | Systems Programming Analyst · Universidad Champagnat, 2025 |
+| `about.facts.focusLabel` | Foco | Focus |
+| `about.facts.focusValue` | Fullstack — Java / Spring Boot · Next.js / React | Fullstack — Java / Spring Boot · Next.js / React |
+
+> `about.p1` y `about.p2` = los dos párrafos de arriba (ES/EN), textual.
+
 ---
 
 ## Proyectos
@@ -78,6 +92,13 @@ Cloudinary, Gemini AI
 
 **Stack:** Next.js, React, TypeScript, Prisma, Supabase, PostgreSQL,
 NextAuth.js, Zustand, Tailwind, Cloudinary, Gemini AI, Vercel, Zod
+
+Labels de sección:
+- `projects.title` (ES) → "Proyectos" | (EN) → "Projects"
+- `projects.liveLabel` (ES) → "Ver sitio" | (EN) → "View site"
+
+> Stack chips = constantes en `src/components/projects.tsx` (nombres tech, no
+> se traducen). Screenshots pendientes (Kevin pasa paths a `public/projects/`).
 
 ---
 
