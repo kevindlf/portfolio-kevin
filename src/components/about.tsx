@@ -21,6 +21,9 @@ export async function About() {
           <p className="mt-4 max-w-xl text-base leading-relaxed text-[color:var(--fg-muted)] md:text-lg">
             {t("p2")}
           </p>
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-[color:var(--fg-muted)] md:text-lg">
+            {t("p3")}
+          </p>
         </div>
 
         <aside className="md:col-span-5">

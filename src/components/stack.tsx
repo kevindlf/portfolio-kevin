@@ -19,7 +19,7 @@ const GROUPS = [
   },
   {
     key: "integrations",
-    items: ["Google Gemini AI", "Cloudinary", "NextAuth.js", "Zod"],
+    items: ["Google Gemini AI", "Claude (Anthropic)", "Cloudinary", "NextAuth.js", "Zod"],
   },
 ] as const;
 

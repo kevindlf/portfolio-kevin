@@ -48,6 +48,10 @@ manda. Si hay discrepancia entre este archivo y `messages/*.json`, este gana.
 > integrate generative AI (Gemini), Cloudinary, deploy on Vercel/Railway
 > with Docker, and apply security best practices on my own initiative.
 
+`about.p3`:
+- ES → En mi flujo de trabajo uso IA como herramienta: Claude para desarrollo y Gemini integrado en el producto.
+- EN → I use AI as a tool in my workflow: Claude for development and Gemini integrated into the product.
+
 ### Card de datos rápidos (columna derecha)
 
 | Clave | ES | EN |
@@ -110,7 +114,7 @@ Labels de sección:
 | Frontend | Next.js, React, TypeScript, Tailwind CSS, shadcn/ui |
 | Base de datos | PostgreSQL, Supabase, Prisma |
 | DevOps | Docker, Vercel, Railway, Git/GitHub |
-| Integraciones | Google Gemini AI, Cloudinary, NextAuth.js, Zod |
+| Integraciones | Google Gemini AI, Claude (Anthropic), Cloudinary, NextAuth.js, Zod |
 
 Labels:
 - `stack.title` (ES) → "Stack técnico" | (EN) → "Tech stack"
@@ -138,7 +142,7 @@ Labels:
 | Clave | ES | EN |
 |---|---|---|
 | `footer.copyright` | © {year} Kevin De La Fuente | © {year} Kevin De La Fuente |
-| `footer.builtWith` | Hecho con Next.js, React y Three.js | Built with Next.js, React and Three.js |
+| `footer.builtWith` | Hecho con Next.js, React y Three.js · asistido por Claude | Built with Next.js, React and Three.js · assisted by Claude |
 
 ---
 
