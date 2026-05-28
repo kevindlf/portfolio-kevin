@@ -195,13 +195,16 @@
 - SEO: `generateMetadata` con metadataBase + Open Graph + Twitter card + canonical + alternates hreflang (es/en/x-default); JSON-LD Person schema en layout; `src/app/sitemap.ts` + `robots.ts`; `src/lib/site.ts` (SITE_URL + PERSON reutilizables)
 - `messages/{es,en}.json` — namespaces `about`, `projects`, `stack`, `contact` sincronizados con CONTENT.md
 - `docs/CONTENT.md` actualizado como source of truth (card datos, labels, Claude, about.p3)
-- Commits (autor noreply): `2ca707a` feat(sections), `02f5cbb` feat(content Claude), `6978187` feat(contact), `e87d7f4` feat(seo). Push fast-forward, deploy prod verificado (~30s)
+- Lighthouse prod `/es` (mobile): Perf 94, A11y 96, Best 100, SEO 100 — supera target 90/100/95
+- Fix LinkedIn: URL anterior redirigía a otro Kevin De La Fuente. Corregida a `https://www.linkedin.com/in/kevindelafuente-729465350/` en footer, contacto, JSON-LD (site.ts), README, CLAUDE.md y agente seo-optimizer
+- Claude a la par de Gemini: About p3 reescrito (dev con Claude+Gemini en paralelo; Gemini integrado en chatbots) + chip "Claude (Anthropic)" en stack de Catan y Velour
+- `og:image` dinámico: `src/app/[locale]/opengraph-image.tsx` con Next ImageResponse (1200x630, dark + glow violeta, nombre/rol/stack, logo kdlf.), por locale, sin assets externos. Twitter card → `summary_large_image`. Verificado visual + prod 200 image/png
+- Commits (autor noreply): `2ca707a` feat(sections), `02f5cbb` feat(content Claude), `6978187` feat(contact), `e87d7f4` feat(seo), `48149e7` Lighthouse, `31dfd46` fix LinkedIn, `aee811e`+`85e48bc` Claude paralelo, `8a93f48` og:image. Todos push fast-forward, deploy prod verificado (~30s)
 
 **Pendiente para próxima sesión:**
-- Lighthouse ≥ 90/100/95 en prod (`/es` y `/en`)
-- Screenshots proyectos → `public/projects/` (Kevin) + slot de preview en cards
-- `og:image` (sin asset todavía)
-- Cerrar Fase 1 → Fase 2
+- **Screenshots de proyectos** (único bloqueante Fase 1): Kevin pasa capturas de **Catan Phones** y **Velour/perfumería** → `public/projects/`. Specs: homepage/hero del sitio prod, desktop landscape (~16:9), buena resolución (1 por proyecto mínimo). Después: agregar slot de preview arriba de cada card en `projects.tsx` + `next/image`
+- "Los otros" proyectos (ej. clínica nefrológica académica): NO están en cards actuales. Solo si se decide agregar card nueva (opcional V2)
+- Cerrar Fase 1 → Fase 2 (Three.js hero, mobile menu, form Resend)
 
 **Decisiones tomadas:**
 - Identidad git: config **LOCAL** con noreply `165217130+kevindlf@users.noreply.github.com` (no global). Razón: Vercel Hobby rechaza deploy si el commit author no mapea a la cuenta owner; máquina compartida entre clientes. Guardado en memoria de Claude
@@ -211,11 +214,15 @@
 - Contacto V1: mailto + LinkedIn, sin form Resend (deferred a Fase 2)
 - Tech names (chips) como constantes en componentes, no vía i18n (no se traducen)
 
+**Decisiones tomadas (cont.):**
+- og:image RESUELTO: generado dinámico con ImageResponse (no asset estático, no screenshot del hero)
+- Screenshots: solo Catan + Velour (los 2 cards actuales). Card de proyecto académico = opcional V2
+
 **Decisiones abiertas:**
-- og:image: ¿generar asset o screenshot del hero?
 - Form contacto Resend (Fase 2) vs seguir con mailto
 - Dominio custom vs subdominio Vercel
 - CV PDF en header (sí/no), Twitter/X handle para meta tags
+- ¿Agregar card de proyecto académico (clínica nefrológica) en V2?
 
 ---
 
