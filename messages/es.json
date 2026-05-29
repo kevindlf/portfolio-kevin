@@ -9,7 +9,8 @@
     "stack": "Stack",
     "contact": "Contacto",
     "openMenu": "Abrir menú",
-    "closeMenu": "Cerrar menú"
+    "closeMenu": "Cerrar menú",
+    "skipToContent": "Saltar al contenido"
   },
   "hero": {
     "name": "Kevin De La Fuente",

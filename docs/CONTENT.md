@@ -161,4 +161,5 @@ Labels:
 | `nav.contact` | Contacto | Contact |
 | `nav.openMenu` | Abrir menú | Open menu |
 | `nav.closeMenu` | Cerrar menú | Close menu |
+| `nav.skipToContent` | Saltar al contenido | Skip to content |
 | `nav.languageToggle` | EN | ES |

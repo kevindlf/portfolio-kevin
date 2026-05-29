@@ -8,6 +8,12 @@ export async function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-[color:var(--bg)]/80 backdrop-blur-xl">
+      <a
+        href="#hero"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-full focus:bg-[color:var(--accent)] focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:text-[color:var(--bg)]"
+      >
+        {t("skipToContent")}
+      </a>
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 md:px-12">
         <a
           href="#top"
