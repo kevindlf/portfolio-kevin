@@ -49,6 +49,24 @@ const PROJECTS = [
   },
 ] as const;
 
+const ACADEMIC = [
+  {
+    key: "clinica",
+    repo: "https://github.com/kevindlf/ProyectoClinicaHospital",
+    stack: ["Java", "Spring Boot", "PostgreSQL", "MySQL", "MVC", "REST APIs"],
+  },
+  {
+    key: "inventario",
+    repo: "https://github.com/kevindlf/inventario-fullstack",
+    stack: ["Angular", "TypeScript", "Spring Boot", "Java", "PostgreSQL", "REST APIs"],
+  },
+  {
+    key: "bodega",
+    repo: "https://github.com/kevindlf/BodegaTittarelliModifica",
+    stack: ["PHP", "MySQL", "JavaScript", "HTML", "CSS"],
+  },
+] as const;
+
 export async function Projects() {
   const t = await getTranslations("projects");
 
@@ -133,6 +151,57 @@ export async function Projects() {
                 </span>
               </a>
               </div>
+            </article>
+          ))}
+        </div>
+
+        <h3 className="mt-20 font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--fg-muted)]">
+          {t("academicTitle")}
+        </h3>
+
+        <div className="mt-6 grid gap-6 md:grid-cols-3">
+          {ACADEMIC.map(({ key, repo, stack }) => (
+            <article
+              key={key}
+              className="group flex flex-col rounded-2xl border border-[color:var(--border)] bg-[color:var(--bg-elevated)] p-6 transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-[color:var(--accent)]"
+            >
+              <h4 className="text-base font-semibold tracking-tight text-[color:var(--fg)]">
+                {t(`${key}.name`)}
+              </h4>
+
+              <p className="mt-1 text-xs text-[color:var(--accent)]">
+                {t(`${key}.subtitle`)}
+              </p>
+
+              <p className="mt-3 text-sm leading-relaxed text-[color:var(--fg-muted)]">
+                {t(`${key}.description`)}
+              </p>
+
+              <ul className="mt-4 flex flex-wrap gap-1.5">
+                {stack.map((tech) => (
+                  <li
+                    key={tech}
+                    className="rounded-full border border-[color:var(--border)] px-2.5 py-0.5 font-mono text-[0.7rem] text-[color:var(--fg-muted)]"
+                  >
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href={repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto inline-flex w-fit items-center pt-5 font-mono text-xs text-[color:var(--fg)] transition-colors hover:text-[color:var(--accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
+              >
+                {t("repoLabel")}
+                <span
+                  aria-hidden="true"
+                  className="ml-1.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                >
+                  ↗
+                </span>
+              </a>
             </article>
           ))}
         </div>

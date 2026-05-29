@@ -34,8 +34,12 @@
       "educationLabel": "Formación",
       "educationValue": "Analista en Programación de Sistemas · Universidad Champagnat, 2025",
       "focusLabel": "Foco",
-      "focusValue": "Fullstack — Java / Spring Boot · Next.js / React"
-    }
+      "focusValue": "Fullstack — Java / Spring Boot · Next.js / React",
+      "languagesLabel": "Idiomas",
+      "languagesValue": "Español nativo · Inglés (lectura técnica fluida)"
+    },
+    "coursesTitle": "Formación complementaria",
+    "courseVerify": "Ver certificado"
   },
   "projects": {
     "title": "Proyectos",
@@ -51,6 +55,23 @@
       "subtitle": "E-commerce de perfumería · Fullstack freelance",
       "period": "Mar 2026 – Abr 2026",
       "description": "Tienda online completa con catálogo, carrito persistido, sistema de pedidos con estados y panel admin para canal online y ventas físicas. NextAuth.js v5, Prisma + Supabase, chatbot Gemini AI, Cloudinary, checkout vía WhatsApp. Cron jobs en Vercel, SEO completo, rate limiting y bcrypt."
+    },
+    "academicTitle": "Proyectos académicos y personales",
+    "repoLabel": "Código",
+    "clinica": {
+      "name": "Sistema de Gestión — Clínica Nefrológica",
+      "subtitle": "Proyecto final de carrera · 2024",
+      "description": "Sistema web para gestión de pacientes e historial clínico, con generación de códigos QR por paciente para acceso rápido a la info médica desde el móvil. Backend Java + Spring Boot, persistencia SQL y arquitectura MVC."
+    },
+    "inventario": {
+      "name": "Gestión de Inventarios",
+      "subtitle": "Full Stack · 2024",
+      "description": "Aplicación web con CRUD completo de productos y control de stock, comunicación cliente-servidor vía REST APIs sobre base de datos relacional. Frontend Angular + TypeScript, backend Spring Boot."
+    },
+    "bodega": {
+      "name": "Bodega Tittarelli",
+      "subtitle": "E-commerce institucional · Grupal · 2024",
+      "description": "Sitio institucional con tienda online: autenticación, carrito y catálogo. Trabajo colaborativo con Git/GitHub (ramas, pull requests, revisión de código)."
     }
   },
   "stack": {
@@ -63,7 +84,8 @@
   },
   "contact": {
     "title": "Trabajemos juntos",
-    "body": "Estoy abierto a roles junior fullstack o backend, tanto remoto como en Mendoza/Argentina.",
+    "body": "Disponible para roles Fullstack, Backend, Frontend, Junior o Trainee — presencial en Mendoza, híbrido o 100% remoto.",
+    "rolesLabel": "Abierto a",
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn"
   },

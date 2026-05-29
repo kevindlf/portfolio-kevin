@@ -3,6 +3,7 @@ import { Reveal } from "./reveal";
 
 const EMAIL = "kevindlf2004@gmail.com";
 const LINKEDIN = "https://www.linkedin.com/in/kevindelafuente-729465350/";
+const ROLES = ["Fullstack", "Backend", "Frontend", "Junior", "Trainee"] as const;
 
 export async function Contact() {
   const t = await getTranslations("contact");
@@ -24,6 +25,20 @@ export async function Contact() {
         <p className="mt-6 max-w-xl text-base leading-relaxed text-[color:var(--fg-muted)] md:text-lg">
           {t("body")}
         </p>
+
+        <div className="mt-6 flex flex-wrap items-center gap-2">
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--accent)]">
+            {t("rolesLabel")}
+          </span>
+          {ROLES.map((role) => (
+            <span
+              key={role}
+              className="rounded-full border border-[color:var(--border)] px-3 py-1 font-mono text-xs text-[color:var(--fg-muted)]"
+            >
+              {role}
+            </span>
+          ))}
+        </div>
 
         <div className="mt-10 flex flex-wrap items-center gap-3">
           <a

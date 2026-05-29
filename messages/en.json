@@ -34,8 +34,12 @@
       "educationLabel": "Education",
       "educationValue": "Systems Programming Analyst · Universidad Champagnat, 2025",
       "focusLabel": "Focus",
-      "focusValue": "Fullstack — Java / Spring Boot · Next.js / React"
-    }
+      "focusValue": "Fullstack — Java / Spring Boot · Next.js / React",
+      "languagesLabel": "Languages",
+      "languagesValue": "Spanish native · English (fluent technical reading)"
+    },
+    "coursesTitle": "Continuing education",
+    "courseVerify": "View certificate"
   },
   "projects": {
     "title": "Projects",
@@ -51,6 +55,23 @@
       "subtitle": "Perfume e-commerce · Freelance fullstack",
       "period": "Mar 2026 – Apr 2026",
       "description": "Full online store with catalog, persistent cart, order tracking and admin panel for both online and in-store sales. NextAuth.js v5, Prisma + Supabase, Gemini AI chatbot, Cloudinary, WhatsApp checkout. Vercel cron jobs, full SEO, rate limiting and bcrypt."
+    },
+    "academicTitle": "Academic & personal projects",
+    "repoLabel": "Code",
+    "clinica": {
+      "name": "Management System — Nephrology Clinic",
+      "subtitle": "Final degree project · 2024",
+      "description": "Web system for patient management and medical history, with per-patient QR codes for quick access to medical info from mobile. Java + Spring Boot backend, SQL persistence and MVC architecture."
+    },
+    "inventario": {
+      "name": "Inventory Management",
+      "subtitle": "Full Stack · 2024",
+      "description": "Web app with full product CRUD and stock control, client-server communication via REST APIs over a relational database. Angular + TypeScript frontend, Spring Boot backend."
+    },
+    "bodega": {
+      "name": "Bodega Tittarelli",
+      "subtitle": "Institutional e-commerce · Team · 2024",
+      "description": "Institutional site with online store: authentication, cart and catalog. Collaborative work with Git/GitHub (branches, pull requests, code review)."
     }
   },
   "stack": {
@@ -63,7 +84,8 @@
   },
   "contact": {
     "title": "Let's work together",
-    "body": "I'm open to junior fullstack or backend roles, remote or in Mendoza/Argentina.",
+    "body": "Available for Fullstack, Backend, Frontend, Junior or Trainee roles — on-site in Mendoza, hybrid or 100% remote.",
+    "rolesLabel": "Open to",
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn"
   },
