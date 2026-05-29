@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { HeroBackground } from "@/components/three/hero-background";
 import { About } from "@/components/about";
 import { Projects } from "@/components/projects";
 import { Stack } from "@/components/stack";
@@ -25,6 +26,8 @@ export default async function Home({
         >
           <div className="absolute left-1/2 top-1/3 h-[40rem] w-[40rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:var(--accent-glow)] blur-[120px]" />
         </div>
+
+        <HeroBackground />
 
         <div className="w-full max-w-6xl">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-[color:var(--accent)]">
