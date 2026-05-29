@@ -28,9 +28,16 @@ export async function Stack() {
   const t = await getTranslations("stack");
 
   return (
-    <section id="stack" className="scroll-mt-16 px-6 py-24 md:px-12 md:py-32">
+    <section
+      id="stack"
+      aria-labelledby="stack-title"
+      className="scroll-mt-16 px-6 py-24 md:px-12 md:py-32"
+    >
       <Reveal className="mx-auto w-full max-w-6xl">
-        <h2 className="text-3xl font-semibold tracking-tight text-[color:var(--fg)] md:text-4xl">
+        <h2
+          id="stack-title"
+          className="text-3xl font-semibold tracking-tight text-[color:var(--fg)] md:text-4xl"
+        >
           {t("title")}
         </h2>
 

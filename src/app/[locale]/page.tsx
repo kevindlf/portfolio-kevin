@@ -18,6 +18,7 @@ export default async function Home({
     <main className="flex flex-1 flex-col">
       <section
         id="hero"
+        aria-labelledby="hero-title"
         className="relative flex min-h-[calc(100svh-4rem)] flex-1 items-center justify-center overflow-hidden px-6 py-24 md:px-12"
       >
         <div
@@ -34,7 +35,10 @@ export default async function Home({
             {t("role")}
           </p>
 
-          <h1 className="mt-6 text-5xl font-semibold leading-[1.02] tracking-tight text-[color:var(--fg)] md:text-7xl lg:text-[5.5rem]">
+          <h1
+            id="hero-title"
+            className="mt-6 text-5xl font-semibold leading-[1.02] tracking-tight text-[color:var(--fg)] md:text-7xl lg:text-[5.5rem]"
+          >
             {t("name")}
           </h1>
 
