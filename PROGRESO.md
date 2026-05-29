@@ -9,11 +9,11 @@
 
 ## Estado actual
 
-**Fase activa:** Fase 1 cerrada (salvo screenshots) · **Fase 2 CERRADA** · próximo Fase 3 (pulido)
-**Última actualización:** 2026-05-29 (sesión 8 — Claude Code)
+**Fase activa:** Fase 2 CERRADA · **Fase 3 arrancada** (favicon hecho)
+**Última actualización:** 2026-05-29 (sesión 9 — Claude Code)
 **URL prod:** https://portfolio-kevin-psi.vercel.app
 **Repo:** https://github.com/kevindlf/portfolio-kevin
-**Próxima acción:** Screenshots Catan + Velour (Kevin → `public/projects/` + slot preview en cards). Fase 3: favicon completo, form Resend, CV PDF, Vercel Analytics. Estado: Lighthouse prod 92/96/100/100 con todo Fase 2 live.
+**Próxima acción:** Screenshots Catan + Velour (Kevin → `public/projects/`). Fase 3 restante: form Resend (decidir sender/DNS), CV PDF (Kevin pasa archivo), Vercel Analytics (dep nueva, OK de Kevin), pasadas impeccable/ui-ux-pro-max.
 
 ---
 
@@ -276,6 +276,31 @@
 - **Verificación UI en headless poco confiable para 3D/responsive:** Chrome headless Windows tiene ancho mínimo de ventana (~482px) → screenshots de 390px recortan; WebGL usa SwiftShader (software) → Lighthouse perf local ~69 falso (real GPU prod = 92-94). Usar CDP `Emulation.setDeviceMetricsOverride` para anchos reales y medir Lighthouse SIEMPRE en prod Vercel
 
 **Decisiones abiertas:** dominio custom, Resend vs mailto, CV PDF sí/no, Twitter handle, card proyecto académico
+
+---
+
+### Sesión 9 — 2026-05-29 (Claude Code, Fase 3 arranque)
+**Objetivo:** Favicon completo (primer item Fase 3).
+
+**Hecho:**
+- `src/app/icon.svg`: mark "k" (paths) + dot violeta sobre fondo dark — reemplaza favicon default
+- `src/app/apple-icon.tsx`: apple-touch-icon 180x180 dinámico con ImageResponse (k + dot)
+- `src/app/manifest.ts`: PWA manifest (name, short_name kdlf, theme/bg #0a0a0b, icons)
+- viewport `themeColor: #0a0a0b` en layout
+- `src/proxy.ts`: matcher excluye `/apple-icon` (sin extensión, el middleware i18n lo redirigía a /es → 307 roto). icon.svg/manifest tienen punto, ya estaban excluidos
+- Borrado `favicon.ico` default de create-next-app
+- Verificado: icon.svg/apple-icon/manifest 200, links en head, apple-icon 180x180 PNG, eyeball OK
+- Commit `39f18d0` feat(seo) favicon. SIN push aún
+
+**Pendiente para próxima sesión:**
+- Screenshots Catan + Velour (bloqueante) → `public/projects/`
+- Fase 3: form Resend (decidir sender/DNS + RESEND_API_KEY), CV PDF (Kevin pasa archivo), Vercel Analytics (dep `@vercel/analytics` fuera de §3 → OK de Kevin), pasadas impeccable/ui-ux-pro-max
+
+**Decisiones tomadas:**
+- Favicon = mark "k" + dot violeta (no "kdlf." completo, ilegible a 16px). apple-icon dinámico (sin asset binario)
+- Rutas de metadata sin extensión (apple-icon, opengraph-image root) deben excluirse del matcher de next-intl
+
+**Decisiones abiertas:** dominio custom, Resend vs mailto, CV PDF sí/no, Twitter handle, card proyecto académico, Vercel Analytics sí/no
 
 ---
 
