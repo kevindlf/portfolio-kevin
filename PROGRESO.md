@@ -9,11 +9,11 @@
 
 ## Estado actual
 
-**Fase activa:** Fase 1 + 2 cerradas · **Fase 3 avanzada** (favicon, Analytics, CV, screenshots, contenido CV hechos)
-**Última actualización:** 2026-05-29 (sesión 10 — Claude Code)
+**Fase activa:** Fase 1 + 2 cerradas · **Fase 3 casi completa** (favicon, Analytics, CV, screenshots, contenido CV, form Resend hechos)
+**Última actualización:** 2026-05-29 (sesión 11 — Claude Code)
 **URL prod:** https://portfolio-kevin-psi.vercel.app
 **Repo:** https://github.com/kevindlf/portfolio-kevin
-**Próxima acción:** Habilitar Analytics en dashboard Vercel (Kevin, toggle). Fase 3 restante: form Resend (sender/DNS + API key — única feature grande pendiente), pasadas impeccable/ui-ux-pro-max (instalar skills). Portfolio ya completo y presentable.
+**Próxima acción:** Kevin: (1) probar form en prod (envío real → Gmail), (2) ROTAR la API key de Resend (quedó visible en chat), (3) habilitar Analytics en dashboard Vercel. Fase 3 opcional restante: pasadas impeccable/ui-ux-pro-max (instalar skills), dominio custom. Portfolio funcional completo.
 
 ---
 
@@ -336,6 +336,36 @@
 - MongoDB: skill real de Kevin (lo confirmó), se agrega aunque no esté en el CV
 
 **Decisiones abiertas:** dominio custom, Resend vs mailto, Twitter handle, galería de screenshots por proyecto (sí/no)
+
+---
+
+### Sesión 11 — 2026-05-29 (Claude Code, form de contacto Resend)
+**Objetivo:** Formulario de contacto real (cierra la última feature grande de Fase 3).
+
+**Hecho:**
+- `src/lib/contact-schema.ts`: validación Zod compartida (name 2-80, email, message 10-2000, honeypot `company`)
+- `src/app/actions/contact.ts`: server action `"use server"` que revalida y envía con Resend (`from: onboarding@resend.dev` → `CONTACT_TO_EMAIL`, `replyTo` del visitante). Lee `RESEND_API_KEY`/`CONTACT_TO_EMAIL` de env
+- `src/components/contact-form.tsx` (client): React Hook Form + zodResolver, estados enviando/ok/error, honeypot oculto, `aria-live` en el status
+- `contact.tsx`: layout 2-col (info+roles+email/LinkedIn como secundarios · form a la derecha)
+- i18n `contact.form` (labels + mensajes de validación) es/en + CONTENT.md
+- deps instaladas: resend, react-hook-form, zod, @hookform/resolvers
+- `.env.local` creado (key real de Kevin, gitignoreado). Env vars cargadas en Vercel por Kevin (RESEND_API_KEY + CONTACT_TO_EMAIL)
+- Test real (CDP, dev): form llenado + enviado → status "¡Listo!" → Resend aceptó el envío
+- Commit `291a776`, push `311843b..291a776`, deploy prod verificado (form renderiza)
+
+**Pendiente para próxima sesión:**
+- Kevin: probar form en prod (envío real → Gmail, chequear spam). Nota: con `onboarding@resend.dev` Resend (testing) solo entrega al email dueño de la cuenta Resend; para enviar a cualquiera hace falta dominio verificado con DNS
+- **Kevin: ROTAR la API key de Resend** (quedó visible en el historial del chat al pegarla) → borrar "portfolio" en Resend, crear nueva, actualizar `.env.local` + Vercel
+- Kevin: habilitar Analytics en dashboard Vercel (toggle)
+- Opcional: dominio custom (mejora entrega de Resend), pasadas impeccable/ui-ux-pro-max
+
+**Decisiones tomadas:**
+- Form con server action (no API route) + Resend. Sender `onboarding@resend.dev` hasta tener dominio
+- Honeypot `company` como anti-spam simple (sin captcha)
+- Email/LinkedIn pasan a botones secundarios; el form es el CTA primario de Contacto
+- API key NUNCA en código ni repo: `.env.local` (gitignore) local + env vars en Vercel
+
+**Decisiones abiertas:** dominio custom (para Resend sender propio + entrega a cualquier destinatario), Twitter handle, galería de screenshots por proyecto
 
 ---
 
