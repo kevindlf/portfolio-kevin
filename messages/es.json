@@ -65,6 +65,12 @@
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn"
   },
+  "notFound": {
+    "code": "404",
+    "title": "Página no encontrada",
+    "body": "La página que buscás no existe o se movió.",
+    "home": "Volver al inicio"
+  },
   "footer": {
     "copyright": "© {year} Kevin De La Fuente",
     "builtWith": "Hecho con Next.js, React y Three.js · asistido por Claude"
