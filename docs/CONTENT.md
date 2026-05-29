@@ -139,6 +139,11 @@ Labels:
 | `contact.body` | Estoy abierto a roles junior fullstack o backend, tanto remoto como en Mendoza/Argentina. | I'm open to junior fullstack or backend roles, remote or in Mendoza/Argentina. |
 | `contact.emailLabel` | Email | Email |
 | `contact.linkedinLabel` | LinkedIn | LinkedIn |
+| `contact.rolesLabel` | Abierto a | Open to |
+| `contact.form.*` | Nombre/Email/Mensaje/Enviar + validaciones | Name/Email/Message/Send + validations |
+
+> Form de contacto: React Hook Form + Zod (client) → server action → Resend
+> (`onboarding@resend.dev` → `CONTACT_TO_EMAIL`). Honeypot anti-spam `company`.
 
 ---
 

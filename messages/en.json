@@ -87,7 +87,24 @@
     "body": "Available for Fullstack, Backend, Frontend, Junior or Trainee roles — on-site in Mendoza, hybrid or 100% remote.",
     "rolesLabel": "Open to",
     "emailLabel": "Email",
-    "linkedinLabel": "LinkedIn"
+    "linkedinLabel": "LinkedIn",
+    "form": {
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "messageLabel": "Message",
+      "send": "Send message",
+      "sending": "Sending…",
+      "success": "Done! I'll get back to you shortly.",
+      "errorSend": "Couldn't send. Try again or email me directly.",
+      "errors": {
+        "nameMin": "Enter your name (min. 2 characters).",
+        "nameMax": "Name too long.",
+        "emailInvalid": "Invalid email.",
+        "emailMax": "Email too long.",
+        "messageMin": "Tell me a bit more (min. 10 characters).",
+        "messageMax": "Message too long (max. 2000)."
+      }
+    }
   },
   "notFound": {
     "code": "404",

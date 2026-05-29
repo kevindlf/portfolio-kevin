@@ -87,7 +87,24 @@
     "body": "Disponible para roles Fullstack, Backend, Frontend, Junior o Trainee — presencial en Mendoza, híbrido o 100% remoto.",
     "rolesLabel": "Abierto a",
     "emailLabel": "Email",
-    "linkedinLabel": "LinkedIn"
+    "linkedinLabel": "LinkedIn",
+    "form": {
+      "nameLabel": "Nombre",
+      "emailLabel": "Email",
+      "messageLabel": "Mensaje",
+      "send": "Enviar mensaje",
+      "sending": "Enviando…",
+      "success": "¡Listo! Te respondo a la brevedad.",
+      "errorSend": "No se pudo enviar. Probá de nuevo o escribime por email.",
+      "errors": {
+        "nameMin": "Ingresá tu nombre (mín. 2 caracteres).",
+        "nameMax": "Nombre demasiado largo.",
+        "emailInvalid": "Email inválido.",
+        "emailMax": "Email demasiado largo.",
+        "messageMin": "Contame un poco más (mín. 10 caracteres).",
+        "messageMax": "Mensaje demasiado largo (máx. 2000)."
+      }
+    }
   },
   "notFound": {
     "code": "404",
