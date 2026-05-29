@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { SmoothScroll } from "@/components/smooth-scroll";
+import { Cursor } from "@/components/cursor";
 import { SITE_URL, PERSON } from "@/lib/site";
 import "../globals.css";
 
@@ -108,6 +110,8 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
         />
         <NextIntlClientProvider>
+          <SmoothScroll />
+          <Cursor />
           <Header />
           <div className="flex flex-1 flex-col">{children}</div>
           <Footer />
