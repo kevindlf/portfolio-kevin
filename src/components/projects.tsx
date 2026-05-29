@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Reveal } from "./reveal";
 
@@ -5,6 +6,7 @@ const PROJECTS = [
   {
     key: "catan",
     url: "https://catan-phones.vercel.app/",
+    image: "/projects/catan.png",
     stack: [
       "Java 21",
       "Spring Boot 4",
@@ -27,6 +29,7 @@ const PROJECTS = [
   {
     key: "velour",
     url: "https://perfumeria-essence.vercel.app/",
+    image: "/projects/velour.png",
     stack: [
       "Next.js",
       "React",
@@ -64,11 +67,30 @@ export async function Projects() {
         </h2>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {PROJECTS.map(({ key, url, stack }) => (
+          {PROJECTS.map(({ key, url, image, stack }) => (
             <article
               key={key}
-              className="group flex flex-col rounded-2xl border border-[color:var(--border)] bg-[color:var(--bg-elevated)] p-6 transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-[color:var(--accent)] md:p-8"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--bg-elevated)] transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-[color:var(--accent)]"
             >
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                tabIndex={-1}
+                aria-hidden="true"
+                className="block overflow-hidden border-b border-[color:var(--border)]"
+              >
+                <Image
+                  src={image}
+                  alt={t(`${key}.name`)}
+                  width={1200}
+                  height={630}
+                  className="aspect-[16/9] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                />
+              </a>
+
+              <div className="flex flex-1 flex-col p-6 md:p-8">
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--fg-muted)]">
                 {t(`${key}.period`)}
               </p>
@@ -110,6 +132,7 @@ export async function Projects() {
                   ↗
                 </span>
               </a>
+              </div>
             </article>
           ))}
         </div>
