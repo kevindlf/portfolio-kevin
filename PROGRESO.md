@@ -9,11 +9,11 @@
 
 ## Estado actual
 
-**Fase activa:** Fase 2 CERRADA · **Fase 3 arrancada** (favicon hecho)
+**Fase activa:** Fase 2 CERRADA · **Fase 3 en curso** (favicon + Analytics hechos)
 **Última actualización:** 2026-05-29 (sesión 9 — Claude Code)
 **URL prod:** https://portfolio-kevin-psi.vercel.app
 **Repo:** https://github.com/kevindlf/portfolio-kevin
-**Próxima acción:** Screenshots Catan + Velour (Kevin → `public/projects/`). Fase 3 restante: form Resend (decidir sender/DNS), CV PDF (Kevin pasa archivo), Vercel Analytics (dep nueva, OK de Kevin), pasadas impeccable/ui-ux-pro-max.
+**Próxima acción:** Habilitar Analytics en dashboard Vercel (toggle, para que junte datos). Screenshots Catan + Velour (Kevin → `public/projects/`). Fase 3 restante: form Resend (sender/DNS + API key), CV PDF (Kevin pasa archivo), pasadas impeccable/ui-ux-pro-max.
 
 ---
 
@@ -290,11 +290,14 @@
 - `src/proxy.ts`: matcher excluye `/apple-icon` (sin extensión, el middleware i18n lo redirigía a /es → 307 roto). icon.svg/manifest tienen punto, ya estaban excluidos
 - Borrado `favicon.ico` default de create-next-app
 - Verificado: icon.svg/apple-icon/manifest 200, links en head, apple-icon 180x180 PNG, eyeball OK
-- Commit `39f18d0` feat(seo) favicon. SIN push aún
+- Commit `39f18d0` feat(seo) favicon
+- **Vercel Analytics:** `@vercel/analytics@2.0.1` (Kevin aprobó dep) + `<Analytics />` en layout (import `@vercel/analytics/next`). No-op en dev, activo en prod. FALTA habilitar Analytics en el dashboard de Vercel (toggle) para que junte datos. Commit `74633ad`
+- Commits SIN push: `39f18d0` favicon, `271c7a4` progreso s9, `74633ad` analytics
 
 **Pendiente para próxima sesión:**
+- Habilitar Analytics en dashboard Vercel (Kevin)
 - Screenshots Catan + Velour (bloqueante) → `public/projects/`
-- Fase 3: form Resend (decidir sender/DNS + RESEND_API_KEY), CV PDF (Kevin pasa archivo), Vercel Analytics (dep `@vercel/analytics` fuera de §3 → OK de Kevin), pasadas impeccable/ui-ux-pro-max
+- Fase 3: form Resend (decidir sender/DNS + RESEND_API_KEY), CV PDF (Kevin pasa archivo), pasadas impeccable/ui-ux-pro-max
 
 **Decisiones tomadas:**
 - Favicon = mark "k" + dot violeta (no "kdlf." completo, ilegible a 16px). apple-icon dinámico (sin asset binario)
