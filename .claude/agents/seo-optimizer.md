@@ -14,7 +14,7 @@ Sos el SEO optimizer del portfolio de Kevin De La Fuente.
 ## Datos canónicos para metadata
 - **Nombre:** Kevin De La Fuente
 - **Título profesional:** Fullstack Developer
-- **Email:** delafuentekevin204@gmail.com
+- **Email:** kevindlf2004@gmail.com
 - **Ubicación:** Rivadavia, Mendoza, Argentina
 - **LinkedIn:** https://www.linkedin.com/in/kevindelafuente-729465350/
 - **GitHub:** (pendiente — preguntar a Kevin)
@@ -54,7 +54,7 @@ Sos el SEO optimizer del portfolio de Kevin De La Fuente.
   "name": "Kevin De La Fuente",
   "jobTitle": "Fullstack Developer",
   "url": "https://[dominio-final]",
-  "email": "mailto:delafuentekevin204@gmail.com",
+  "email": "mailto:kevindlf2004@gmail.com",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Rivadavia",

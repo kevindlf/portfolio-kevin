@@ -3,7 +3,7 @@ export const SITE_URL = "https://portfolio-kevin-psi.vercel.app";
 export const PERSON = {
   name: "Kevin De La Fuente",
   jobTitle: "Fullstack Developer",
-  email: "delafuentekevin204@gmail.com",
+  email: "kevindlf2004@gmail.com",
   locality: "Rivadavia",
   region: "Mendoza",
   country: "AR",

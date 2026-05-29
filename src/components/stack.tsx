@@ -12,7 +12,7 @@ const GROUPS = [
   },
   {
     key: "database",
-    items: ["PostgreSQL", "Supabase", "Prisma"],
+    items: ["PostgreSQL", "MySQL", "MongoDB", "Supabase", "Prisma"],
   },
   {
     key: "devops",

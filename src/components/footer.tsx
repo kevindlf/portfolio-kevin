@@ -27,7 +27,7 @@ export async function Footer() {
             LinkedIn
           </a>
           <a
-            href="mailto:delafuentekevin204@gmail.com"
+            href="mailto:kevindlf2004@gmail.com"
             className="transition-colors hover:text-[color:var(--fg)]"
           >
             Email

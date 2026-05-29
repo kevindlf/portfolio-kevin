@@ -11,7 +11,7 @@ modificar componentes o agregar contenido.
 - **Nombre del proyecto:** portfolio-kevin
 - **Dueño:** Kevin De La Fuente
 - **Ubicación:** Rivadavia, Mendoza, Argentina
-- **Email de contacto público:** delafuentekevin204@gmail.com
+- **Email de contacto público:** kevindlf2004@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/kevindelafuente-729465350/
 - **Objetivo del portfolio:** conseguir mi primera experiencia formal en IT como
   Fullstack Developer, destacando los proyectos freelance ya entregados (Catan

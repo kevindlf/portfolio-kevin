@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Reveal } from "./reveal";
 
-const EMAIL = "delafuentekevin204@gmail.com";
+const EMAIL = "kevindlf2004@gmail.com";
 const LINKEDIN = "https://www.linkedin.com/in/kevindelafuente-729465350/";
 
 export async function Contact() {
