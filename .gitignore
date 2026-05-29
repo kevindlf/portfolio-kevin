@@ -11,6 +11,10 @@
 # testing
 /coverage
 
+# screenshots fuente de proyectos (solo se versionan catan.png / velour.png usadas)
+/public/projects/Catan Phones/
+/public/projects/Veloir Fragancias/
+
 # next.js
 /.next/
 /out/

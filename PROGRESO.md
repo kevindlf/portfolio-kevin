@@ -9,11 +9,11 @@
 
 ## Estado actual
 
-**Fase activa:** Fase 2 CERRADA · **Fase 3 en curso** (favicon + Analytics hechos)
-**Última actualización:** 2026-05-29 (sesión 9 — Claude Code)
+**Fase activa:** Fase 1 + 2 cerradas · **Fase 3 avanzada** (favicon, Analytics, CV, screenshots, contenido CV hechos)
+**Última actualización:** 2026-05-29 (sesión 10 — Claude Code)
 **URL prod:** https://portfolio-kevin-psi.vercel.app
 **Repo:** https://github.com/kevindlf/portfolio-kevin
-**Próxima acción:** Habilitar Analytics en dashboard Vercel (toggle, para que junte datos). Screenshots Catan + Velour (Kevin → `public/projects/`). Fase 3 restante: form Resend (sender/DNS + API key), CV PDF (Kevin pasa archivo), pasadas impeccable/ui-ux-pro-max.
+**Próxima acción:** Habilitar Analytics en dashboard Vercel (Kevin, toggle). Fase 3 restante: form Resend (sender/DNS + API key — única feature grande pendiente), pasadas impeccable/ui-ux-pro-max (instalar skills). Portfolio ya completo y presentable.
 
 ---
 
@@ -306,6 +306,36 @@
 - Rutas de metadata sin extensión (apple-icon, opengraph-image root) deben excluirse del matcher de next-intl
 
 **Decisiones abiertas:** dominio custom, Resend vs mailto, CV PDF sí/no, Twitter handle, card proyecto académico, Vercel Analytics sí/no
+
+---
+
+### Sesión 10 — 2026-05-29 (Claude Code, assets de Kevin + review CV)
+**Objetivo:** Integrar screenshots y CV que pasó Kevin; revisar CV para sumar info faltante.
+
+**Hecho:**
+- Screenshots en cards de Proyectos: Kevin subió `public/projects/Catan Phones/*` (13) y `Veloir Fragancias/*` (11, typo "Veloir"). Elegidos los storefronts (Catan 1.png, Velour 5.png) → copiados a `public/projects/catan.png` / `velour.png` (nombres limpios sin espacios). Preview superior con `next/image` aspect 16:9, hover zoom. Carpetas fuente gitignoreadas (solo se versionan las 2 usadas)
+- Botón descarga **CV** (PDF) en header (desktop) + en menú mobile. `CV_URL` en lib/nav, PDF en `public/Kevin_De_La_Fuente_CV.pdf`. `nav.cv`/`nav.downloadCv` i18n
+- **MongoDB** + MySQL agregados a Stack/Base de datos (MongoDB pedido por Kevin, no estaba; MySQL del CV)
+- **Email corregido** a `kevindlf2004@gmail.com` (coincide con el CV; antes el portfolio usaba `delafuentekevin204@gmail.com` que era distinto). Cambiado en contact, footer, site.ts/JSON-LD, CLAUDE.md, seo-optimizer, .env.example
+- **Review CV → sumado al portfolio:**
+  - Proyectos: sub-bloque "Proyectos académicos y personales" (Clínica Nefrológica con QR, Gestión Inventarios, Bodega Tittarelli) con stack chips + link a repo GitHub
+  - About: fact "Idiomas" (ES nativo · EN lectura técnica) + bloque "Formación complementaria" (2 cursos Udemy con link de verificación)
+  - Contacto: body con roles/modalidad del CV + chips de roles (Fullstack/Backend/Frontend/Junior/Trainee)
+- Commits: `ba0c018` screenshots, `34103ec` CV button, `c018a7e` email+MongoDB, `6796e45` contenido CV
+
+**Pendiente para próxima sesión:**
+- Habilitar Analytics en dashboard Vercel (Kevin)
+- Form Resend (única feature grande que queda): decidir sender/DNS + RESEND_API_KEY
+- Pasadas impeccable / ui-ux-pro-max (instalar skills)
+- Opcional: usar más screenshots (admin, chatbot) en una galería/modal por proyecto
+
+**Decisiones tomadas:**
+- Email público canónico = `kevindlf2004@gmail.com` (el del CV). CLAUDE.md §1 actualizado
+- Card preview = storefront de cada proyecto (no admin). Solo se versionan catan.png/velour.png; el resto de capturas quedan local (gitignore)
+- Proyectos académicos en sub-bloque separado de los freelance (no se mezclan; marcados como académicos/personales)
+- MongoDB: skill real de Kevin (lo confirmó), se agrega aunque no esté en el CV
+
+**Decisiones abiertas:** dominio custom, Resend vs mailto, Twitter handle, galería de screenshots por proyecto (sí/no)
 
 ---
 
