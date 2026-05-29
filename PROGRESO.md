@@ -9,11 +9,11 @@
 
 ## Estado actual
 
-**Fase activa:** Fase 1 cerrada (salvo screenshots) · Fase 2 arrancada (Three.js hero hecho)
-**Última actualización:** 2026-05-29 (sesión 7 — Claude Code)
+**Fase activa:** Fase 1 cerrada (salvo screenshots) · **Fase 2 CERRADA** · próximo Fase 3 (pulido)
+**Última actualización:** 2026-05-29 (sesión 8 — Claude Code)
 **URL prod:** https://portfolio-kevin-psi.vercel.app
 **Repo:** https://github.com/kevindlf/portfolio-kevin
-**Próxima acción:** Screenshots Catan + Velour (Kevin → `public/projects/` + slot preview en cards). Fase 2 restante: mobile menu, form Resend. Pendiente medir FPS hero en navegador real. Estado: Lighthouse 94/96/100/100, og:image dinámico, Three.js hero live.
+**Próxima acción:** Screenshots Catan + Velour (Kevin → `public/projects/` + slot preview en cards). Fase 3: favicon completo, form Resend, CV PDF, Vercel Analytics. Estado: Lighthouse prod 92/96/100/100 con todo Fase 2 live.
 
 ---
 
@@ -249,6 +249,33 @@
 - Glow violeta estático se mantiene como base visual + fallback `prefers-reduced-motion`
 
 **Decisiones abiertas:** (sin cambios respecto a sesión 6)
+
+---
+
+### Sesión 8 — 2026-05-29 (Claude Code, cierre Fase 2)
+**Objetivo:** Completar lo restante de Fase 2 (menú mobile, motion, smooth scroll, cursor) + re-medir Lighthouse.
+
+**Hecho:**
+- `src/components/mobile-menu.tsx` (client): hamburguesa `md:hidden`, panel desplegable con anchors, cierra en click/Escape, aria-expanded/controls/label. `NAV_LINKS` extraído a `src/lib/nav.ts` (compartido server+client). Montado en header junto a LangSwitcher; nav desktop intacto
+- `src/components/reveal.tsx` (framer-motion): wrapper `whileInView` (fade + translateY, once, margin -80px), respeta `prefers-reduced-motion`. Aplicado a About/Proyectos/Stack/Contacto
+- Cards Proyectos: lift en hover (`-translate-y-1`), flecha `↗` se desplaza en group-hover, botón "Ver sitio" alineado al fondo (`mt-auto`)
+- `src/components/smooth-scroll.tsx`: lenis (instalado, está en CLAUDE.md §3), smooth scroll global + intercepta anchors con offset header; off en reduced-motion
+- `src/components/cursor.tsx`: anillo accent que sigue al mouse con lag, crece sobre interactivos; solo pointer fino, no oculta cursor nativo. CSS de lenis en globals.css
+- Commits (autor noreply): `9080690` mobile menu, `15c1c56` motion (reveal+hover), `5f165e8` lenis+cursor. Push `2d9f04b..5f165e8`, deploy prod verificado
+- **Lighthouse prod final: Perf 92, A11y 96, Best 100, SEO 100** (FCP 1.1s, LCP 1.4s, TBT 330ms, CLS 0.001). Sigue sobre target
+
+**Pendiente para próxima sesión:**
+- **Screenshots Catan + Velour** (único bloqueante) → `public/projects/` + slot preview en cards
+- Fase 3: favicon completo (svg+ico+apple-touch), form Resend (server action + Zod), CV PDF en header, Vercel Analytics, pasadas impeccable / ui-ux-pro-max
+- FPS hero 3D en navegador real (no medible confiable en headless)
+
+**Decisiones tomadas:**
+- Fase 2 cerrada. Hover de cards = CSS puro (group-hover), no JS. Reveal = framer-motion `whileInView` once
+- Cursor custom NO oculta el cursor nativo (a11y); solo desktop pointer fino
+- lenis intercepta anchors con `scrollTo` offset -64 (header sticky)
+- **Verificación UI en headless poco confiable para 3D/responsive:** Chrome headless Windows tiene ancho mínimo de ventana (~482px) → screenshots de 390px recortan; WebGL usa SwiftShader (software) → Lighthouse perf local ~69 falso (real GPU prod = 92-94). Usar CDP `Emulation.setDeviceMetricsOverride` para anchos reales y medir Lighthouse SIEMPRE en prod Vercel
+
+**Decisiones abiertas:** dominio custom, Resend vs mailto, CV PDF sí/no, Twitter handle, card proyecto académico
 
 ---
 
