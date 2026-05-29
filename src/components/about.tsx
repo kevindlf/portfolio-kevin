@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { Reveal } from "./reveal";
 
 const FACTS = ["location", "education", "focus"] as const;
 
@@ -10,7 +11,7 @@ export async function About() {
       id="about"
       className="scroll-mt-16 px-6 py-24 md:px-12 md:py-32"
     >
-      <div className="mx-auto grid w-full max-w-6xl gap-12 md:grid-cols-12">
+      <Reveal className="mx-auto grid w-full max-w-6xl gap-12 md:grid-cols-12">
         <div className="md:col-span-7">
           <h2 className="text-3xl font-semibold tracking-tight text-[color:var(--fg)] md:text-4xl">
             {t("title")}
@@ -40,7 +41,7 @@ export async function About() {
             ))}
           </dl>
         </aside>
-      </div>
+      </Reveal>
     </section>
   );
 }

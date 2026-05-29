@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { Reveal } from "./reveal";
 
 const PROJECTS = [
   {
@@ -53,7 +54,7 @@ export async function Projects() {
       id="projects"
       className="scroll-mt-16 px-6 py-24 md:px-12 md:py-32"
     >
-      <div className="mx-auto w-full max-w-6xl">
+      <Reveal className="mx-auto w-full max-w-6xl">
         <h2 className="text-3xl font-semibold tracking-tight text-[color:var(--fg)] md:text-4xl">
           {t("title")}
         </h2>
@@ -62,7 +63,7 @@ export async function Projects() {
           {PROJECTS.map(({ key, url, stack }) => (
             <article
               key={key}
-              className="flex flex-col rounded-2xl border border-[color:var(--border)] bg-[color:var(--bg-elevated)] p-6 transition-colors hover:border-[color:var(--accent)] md:p-8"
+              className="group flex flex-col rounded-2xl border border-[color:var(--border)] bg-[color:var(--bg-elevated)] p-6 transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-[color:var(--accent)] md:p-8"
             >
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--fg-muted)]">
                 {t(`${key}.period`)}
@@ -95,17 +96,20 @@ export async function Projects() {
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex h-10 w-fit items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--bg)] px-5 font-mono text-sm font-medium text-[color:var(--fg)] transition-colors hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
+                className="mt-auto inline-flex h-10 w-fit items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--bg)] px-5 font-mono text-sm font-medium text-[color:var(--fg)] transition-colors hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
               >
                 {t("liveLabel")}
-                <span aria-hidden="true" className="ml-2">
+                <span
+                  aria-hidden="true"
+                  className="ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                >
                   ↗
                 </span>
               </a>
             </article>
           ))}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
