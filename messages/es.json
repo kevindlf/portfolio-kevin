@@ -7,7 +7,9 @@
     "about": "Sobre mí",
     "projects": "Proyectos",
     "stack": "Stack",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
   },
   "hero": {
     "name": "Kevin De La Fuente",

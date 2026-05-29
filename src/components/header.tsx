@@ -1,12 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { LangSwitcher } from "./lang-switcher";
-
-const NAV_LINKS = [
-  { key: "about", href: "#about" },
-  { key: "projects", href: "#projects" },
-  { key: "stack", href: "#stack" },
-  { key: "contact", href: "#contact" },
-] as const;
+import { MobileMenu } from "./mobile-menu";
+import { NAV_LINKS } from "@/lib/nav";
 
 export async function Header() {
   const t = await getTranslations("nav");
@@ -37,7 +32,10 @@ export async function Header() {
           ))}
         </nav>
 
-        <LangSwitcher />
+        <div className="flex items-center gap-3">
+          <LangSwitcher />
+          <MobileMenu />
+        </div>
       </div>
     </header>
   );

@@ -7,7 +7,9 @@
     "about": "About",
     "projects": "Projects",
     "stack": "Stack",
-    "contact": "Contact"
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "hero": {
     "name": "Kevin De La Fuente",

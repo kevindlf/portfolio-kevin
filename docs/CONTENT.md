@@ -159,4 +159,6 @@ Labels:
 | `nav.projects` | Proyectos | Projects |
 | `nav.stack` | Stack | Stack |
 | `nav.contact` | Contacto | Contact |
+| `nav.openMenu` | Abrir menú | Open menu |
+| `nav.closeMenu` | Cerrar menú | Close menu |
 | `nav.languageToggle` | EN | ES |
