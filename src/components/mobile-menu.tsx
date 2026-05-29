@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { NAV_LINKS } from "@/lib/nav";
+import { NAV_LINKS, CV_URL } from "@/lib/nav";
 
 export function MobileMenu() {
   const t = useTranslations("nav");
@@ -70,6 +70,16 @@ export function MobileMenu() {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href={CV_URL}
+                download
+                onClick={() => setOpen(false)}
+                className="block py-3 text-[color:var(--accent)] transition-colors hover:text-[color:var(--fg)]"
+              >
+                {t("cv")} ↓
+              </a>
+            </li>
           </ul>
         </nav>
       )}

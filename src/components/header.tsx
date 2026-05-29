@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { LangSwitcher } from "./lang-switcher";
 import { MobileMenu } from "./mobile-menu";
-import { NAV_LINKS } from "@/lib/nav";
+import { NAV_LINKS, CV_URL } from "@/lib/nav";
 
 export async function Header() {
   const t = await getTranslations("nav");
@@ -39,6 +39,17 @@ export async function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <a
+            href={CV_URL}
+            download
+            aria-label={t("downloadCv")}
+            className="hidden h-9 items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--bg-elevated)] px-4 font-mono text-xs text-[color:var(--fg)] transition-colors hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)] md:inline-flex"
+          >
+            {t("cv")}
+            <span aria-hidden="true" className="ml-1.5">
+              ↓
+            </span>
+          </a>
           <LangSwitcher />
           <MobileMenu />
         </div>

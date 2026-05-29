@@ -10,7 +10,9 @@
     "contact": "Contacto",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
-    "skipToContent": "Saltar al contenido"
+    "skipToContent": "Saltar al contenido",
+    "cv": "CV",
+    "downloadCv": "Descargar CV (PDF)"
   },
   "hero": {
     "name": "Kevin De La Fuente",

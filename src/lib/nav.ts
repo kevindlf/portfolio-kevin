@@ -4,3 +4,5 @@ export const NAV_LINKS = [
   { key: "stack", href: "#stack" },
   { key: "contact", href: "#contact" },
 ] as const;
+
+export const CV_URL = "/Kevin_De_La_Fuente_CV.pdf";

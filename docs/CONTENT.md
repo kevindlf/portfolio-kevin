@@ -162,4 +162,6 @@ Labels:
 | `nav.openMenu` | Abrir menú | Open menu |
 | `nav.closeMenu` | Cerrar menú | Close menu |
 | `nav.skipToContent` | Saltar al contenido | Skip to content |
+| `nav.cv` | CV | CV |
+| `nav.downloadCv` | Descargar CV (PDF) | Download CV (PDF) |
 | `nav.languageToggle` | EN | ES |
