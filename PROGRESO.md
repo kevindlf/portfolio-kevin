@@ -9,11 +9,11 @@
 
 ## Estado actual
 
-**Fase activa:** Fase 1 — V1 funcional (5 secciones + SEO listas, falta pulido)
-**Última actualización:** 2026-05-28 (sesión 6 — Claude Code)
+**Fase activa:** Fase 1 cerrada (salvo screenshots) · Fase 2 arrancada (Three.js hero hecho)
+**Última actualización:** 2026-05-29 (sesión 7 — Claude Code)
 **URL prod:** https://portfolio-kevin-psi.vercel.app
 **Repo:** https://github.com/kevindlf/portfolio-kevin
-**Próxima acción:** Fase 1 cerrada salvo screenshots de proyectos (Kevin pasa archivos a `public/projects/` → agregar slot de preview en cards). Lighthouse OK (94/96/100/100), og:image dinámico OK. Luego Fase 2 (Three.js hero, mobile menu, form Resend).
+**Próxima acción:** Screenshots Catan + Velour (Kevin → `public/projects/` + slot preview en cards). Fase 2 restante: mobile menu, form Resend. Pendiente medir FPS hero en navegador real. Estado: Lighthouse 94/96/100/100, og:image dinámico, Three.js hero live.
 
 ---
 
@@ -223,6 +223,32 @@
 - Dominio custom vs subdominio Vercel
 - CV PDF en header (sí/no), Twitter/X handle para meta tags
 - ¿Agregar card de proyecto académico (clínica nefrológica) en V2?
+
+---
+
+### Sesión 7 — 2026-05-29 (Claude Code, Three.js hero)
+**Objetivo:** Fondo 3D en el hero (feature signature) para subir impacto del link Vercel.
+
+**Hecho:**
+- `src/components/three/hero-particles.tsx` (`"use client"`, R3F): campo de ~4000 puntos (1500 si `innerWidth < 768`) distribuidos en esfera, color accent `#7c5cff`, `AdditiveBlending`, `depthWrite:false`. `useFrame`: rotación lenta auto + parallax con lerp hacia mouse (listener `pointermove` en window). DPR `[1,1.5]`, `antialias:false`, `powerPreference:"high-performance"`. `prefers-reduced-motion` → no monta (return null)
+- `src/components/three/hero-background.tsx` (`"use client"`): loader `dynamic(() => import("./hero-particles"), { ssr:false })`, wrapper `aria-hidden pointer-events-none absolute inset-0 -z-10`
+- `src/app/[locale]/page.tsx`: `<HeroBackground />` montado tras el glow (glow queda como capa base + fallback reduced-motion). Texto/CTAs sin cambios
+- Verificado: build TS strict OK, canvas monta (`three.js r184`), screenshot headless (Chrome SwiftShader) muestra partículas violetas detrás del texto, hero legible
+- Commit `0691641` feat(hero), push `4f912fe..0691641`, deploy prod verificado (canvas en DOM de prod)
+
+**Pendiente para próxima sesión:**
+- **Screenshots Catan + Velour** (único bloqueante Fase 1) → `public/projects/` + slot preview en cards
+- Medir FPS del hero en navegador real (DevTools Performance); si <60 desktop / <30 mobile, bajar count/size
+- Fase 2 restante: mobile menu (nav hamburguesa), form contacto Resend
+- Pulido: animaciones scroll-in (framer-motion) opcional
+
+**Decisiones tomadas:**
+- Three.js hero = partículas en esfera (no geometría sólida), parallax al mouse vía window listener (canvas `pointer-events-none`, clicks pasan)
+- Carga con `dynamic ssr:false` para no romper SSR ni bloquear render inicial RSC
+- Componentes 3D en `src/components/three/` (única subcarpeta usada, alineado CLAUDE.md §6)
+- Glow violeta estático se mantiene como base visual + fallback `prefers-reduced-motion`
+
+**Decisiones abiertas:** (sin cambios respecto a sesión 6)
 
 ---
 
