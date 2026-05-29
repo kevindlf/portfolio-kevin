@@ -292,7 +292,8 @@
 - Verificado: icon.svg/apple-icon/manifest 200, links en head, apple-icon 180x180 PNG, eyeball OK
 - Commit `39f18d0` feat(seo) favicon
 - **Vercel Analytics:** `@vercel/analytics@2.0.1` (Kevin aprobó dep) + `<Analytics />` en layout (import `@vercel/analytics/next`). No-op en dev, activo en prod. FALTA habilitar Analytics en el dashboard de Vercel (toggle) para que junte datos. Commit `74633ad`
-- Commits SIN push: `39f18d0` favicon, `271c7a4` progreso s9, `74633ad` analytics
+- Commits push s9: `39f18d0` favicon, `271c7a4` progreso, `74633ad` analytics, `a6267a6` progreso (push `3a8668d..a6267a6`)
+- Pasada a11y: `src/components/header.tsx` skip-to-content link (sr-only, visible al foco, `nav.skipToContent` i18n) — commit `1114ac2`; `aria-labelledby` en las 5 `<section>` con id en cada heading (landmarks nombrados) — commit `e890fcb`. Verificado: 5 pares resuelven. SIN push (`1114ac2`, `e890fcb`)
 
 **Pendiente para próxima sesión:**
 - Habilitar Analytics en dashboard Vercel (Kevin)
