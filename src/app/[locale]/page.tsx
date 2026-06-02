@@ -1,5 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { HeroBackground } from "@/components/three/hero-background";
+import { HeroIntro } from "@/components/hero-intro";
+import { Stats } from "@/components/stats";
 import { About } from "@/components/about";
 import { Projects } from "@/components/projects";
 import { Stack } from "@/components/stack";
@@ -30,44 +32,14 @@ export default async function Home({
 
         <HeroBackground />
 
-        <div className="w-full max-w-6xl">
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-[color:var(--accent)]">
-            {t("role")}
-          </p>
-
-          <h1
-            id="hero-title"
-            className="mt-6 text-5xl font-semibold leading-[1.02] tracking-tight text-[color:var(--fg)] md:text-7xl lg:text-[5.5rem]"
-          >
-            {t("name")}
-          </h1>
-
-          <p className="mt-8 max-w-2xl text-2xl leading-tight text-[color:var(--fg)] md:text-3xl">
-            {t("tagline")}
-          </p>
-
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-[color:var(--fg-muted)] md:text-lg">
-            {t("subtitle")}
-          </p>
-
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            <a
-              href="#projects"
-              className="inline-flex h-12 items-center justify-center rounded-full bg-[color:var(--accent)] px-6 font-mono text-sm font-medium text-[color:var(--bg)] transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
-            >
-              {t("ctaPrimary")}
-              <span aria-hidden="true" className="ml-2">
-                ↓
-              </span>
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--bg-elevated)] px-6 font-mono text-sm font-medium text-[color:var(--fg)] transition-colors hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
-            >
-              {t("ctaSecondary")}
-            </a>
-          </div>
-        </div>
+        <HeroIntro
+          role={t("role")}
+          name={t("name")}
+          tagline={t("tagline")}
+          subtitle={t("subtitle")}
+          ctaPrimary={t("ctaPrimary")}
+          ctaSecondary={t("ctaSecondary")}
+        />
 
         <div
           aria-hidden="true"
@@ -77,6 +49,7 @@ export default async function Home({
         </div>
       </section>
 
+      <Stats />
       <About />
       <Projects />
       <Stack />
