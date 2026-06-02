@@ -1,12 +1,17 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Reveal } from "./reveal";
+import { ProjectGallery } from "./project-gallery";
+
+const catanShots = Array.from({ length: 13 }, (_, i) => `/projects/catan/${i + 1}.png`);
+const velourShots = Array.from({ length: 11 }, (_, i) => `/projects/velour/${i + 1}.png`);
 
 const PROJECTS = [
   {
     key: "catan",
     url: "https://catan-phones.vercel.app/",
     image: "/projects/catan.png",
+    gallery: catanShots,
     stack: [
       "Java 21",
       "Spring Boot 4",
@@ -30,6 +35,7 @@ const PROJECTS = [
     key: "velour",
     url: "https://perfumeria-essence.vercel.app/",
     image: "/projects/velour.png",
+    gallery: velourShots,
     stack: [
       "Next.js",
       "React",
@@ -85,7 +91,7 @@ export async function Projects() {
         </h2>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {PROJECTS.map(({ key, url, image, stack }) => (
+          {PROJECTS.map(({ key, url, image, gallery, stack }) => (
             <article
               key={key}
               className="group flex flex-col overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--bg-elevated)] transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-[color:var(--accent)]"
@@ -136,20 +142,23 @@ export async function Projects() {
                 ))}
               </ul>
 
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-auto inline-flex h-10 w-fit items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--bg)] px-5 font-mono text-sm font-medium text-[color:var(--fg)] transition-colors hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
-              >
-                {t("liveLabel")}
-                <span
-                  aria-hidden="true"
-                  className="ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              <div className="mt-auto flex flex-wrap gap-3 pt-6">
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-10 w-fit items-center justify-center rounded-full bg-[color:var(--accent)] px-5 font-mono text-sm font-medium text-[color:var(--bg)] transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
                 >
-                  ↗
-                </span>
-              </a>
+                  {t("liveLabel")}
+                  <span
+                    aria-hidden="true"
+                    className="ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  >
+                    ↗
+                  </span>
+                </a>
+                <ProjectGallery images={gallery} name={t(`${key}.name`)} />
+              </div>
               </div>
             </article>
           ))}

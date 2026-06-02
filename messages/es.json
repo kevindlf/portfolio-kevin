@@ -44,6 +44,11 @@
   "projects": {
     "title": "Proyectos",
     "liveLabel": "Ver sitio",
+    "galleryLabel": "Ver capturas",
+    "galleryClose": "Cerrar galería",
+    "galleryPrev": "Anterior",
+    "galleryNext": "Siguiente",
+    "galleryCounter": "{current} / {total}",
     "catan": {
       "name": "Catan Phones",
       "subtitle": "E-commerce de celulares · Fullstack freelance",
@@ -73,6 +78,16 @@
       "subtitle": "E-commerce institucional · Grupal · 2024",
       "description": "Sitio institucional con tienda online: autenticación, carrito y catálogo. Trabajo colaborativo con Git/GitHub (ramas, pull requests, revisión de código)."
     }
+  },
+  "stats": {
+    "projectsValue": "2",
+    "projectsLabel": "E-commerce en producción",
+    "deliveredValue": "5",
+    "deliveredLabel": "Proyectos entregados",
+    "auditValue": "9",
+    "auditLabel": "Puntos de auditoría de seguridad",
+    "autonomyValue": "100%",
+    "autonomyLabel": "Desarrollo autónomo end-to-end"
   },
   "stack": {
     "title": "Stack técnico",

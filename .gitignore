@@ -11,7 +11,8 @@
 # testing
 /coverage
 
-# screenshots fuente de proyectos (solo se versionan catan.png / velour.png usadas)
+# screenshots fuente de proyectos (carpetas originales con espacios — no versionar)
+# las versiones limpias en /public/projects/catan/ y /velour/ SÍ se versionan
 /public/projects/Catan Phones/
 /public/projects/Veloir Fragancias/
 
