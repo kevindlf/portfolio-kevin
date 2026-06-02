@@ -9,11 +9,11 @@
 
 ## Estado actual
 
-**Fase activa:** Fase 1 + 2 cerradas · **Fase 3 casi completa** (favicon, Analytics, CV, screenshots, contenido CV, form Resend hechos)
-**Última actualización:** 2026-05-29 (sesión 11 — Claude Code)
+**Fase activa:** Fase 1+2+3 completas · mejoras de impacto hechas (galería, métricas, hero)
+**Última actualización:** 2026-05-29 (sesión 12 — Claude Code)
 **URL prod:** https://portfolio-kevin-psi.vercel.app
 **Repo:** https://github.com/kevindlf/portfolio-kevin
-**Próxima acción:** Kevin: (1) probar form en prod (envío real → Gmail), (2) ROTAR la API key de Resend (quedó visible en chat), (3) habilitar Analytics en dashboard Vercel. Fase 3 opcional restante: pasadas impeccable/ui-ux-pro-max (instalar skills), dominio custom. Portfolio funcional completo.
+**Próxima acción:** Portfolio completo y pulido. Opcional restante: dominio custom (kevindelafuente.dev — mejora entrega Resend + percepción), pasadas impeccable/ui-ux-pro-max (instalar skills). Kevin ya hizo: rotó key Resend, habilitó Analytics, probó form.
 
 ---
 
@@ -366,6 +366,30 @@
 - API key NUNCA en código ni repo: `.env.local` (gitignore) local + env vars en Vercel
 
 **Decisiones abiertas:** dominio custom (para Resend sender propio + entrega a cualquier destinatario), Twitter handle, galería de screenshots por proyecto
+
+---
+
+### Sesión 12 — 2026-05-29 (Claude Code, mejoras de impacto)
+**Objetivo:** Subir el "wow" del portfolio con assets ya disponibles.
+
+**Hecho:**
+- **Galería lightbox por proyecto**: 24 capturas que Kevin había subido (13 Catan + 11 Velour) ahora versionadas en `public/projects/{catan,velour}/N.png` (rutas limpias; carpetas con espacios siguen gitignoreadas). `project-gallery.tsx` (client): botón "Ver capturas (N)" → modal con next/image, prev/next, contador, Escape/←/→, scroll-lock, aria-modal. Wire en projects.tsx (botón "Ver sitio" pasó a accent). Commit `3e01878`
+- **Franja de métricas** (`stats.tsx`): 4 datos reales del CV — 2 e-commerce en producción · 5 proyectos entregados · 9 puntos auditoría · 100% autónomo. Montada entre hero y About. Commit `c23aa20`
+- **Hero más impactante** (`hero-intro.tsx`): animación stagger de entrada (framer-motion, reduced-motion safe) + nombre con gradiente fg→accent. Commit `e4fdcc7`
+- Verificado vía CDP: galería abre/navega (1/13→2/13), stats visibles, hero gradiente. Build TS OK
+- Sin deps nuevas (framer-motion/next-image ya estaban)
+
+**Pendiente para próxima sesión (todo opcional):**
+- Dominio custom `kevindelafuente.dev` (mejora entrega Resend + sender propio + percepción) — Kevin compra, te guío DNS
+- Pasadas impeccable / ui-ux-pro-max (instalar skills)
+- Posible: captions por captura en la galería, lazy-load de las imágenes de galería (hoy `priority` en el modal)
+
+**Decisiones tomadas:**
+- Galería = lightbox custom (sin dep), no librería. Solo se versionan capturas en catan/ y velour/ limpias
+- Métricas: solo números reales del CV (sin años de experiencia, es junior)
+- Hero textos siguen viniendo del server (i18n); HeroIntro solo anima (client)
+
+**Decisiones abiertas:** dominio custom, Twitter handle
 
 ---
 
