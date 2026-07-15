@@ -13,10 +13,16 @@ modificar componentes o agregar contenido.
 - **Ubicación:** Rivadavia, Mendoza, Argentina
 - **Email de contacto público:** kevindlf2004@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/kevindelafuente-729465350/
-- **Objetivo del portfolio:** conseguir mi primera experiencia formal en IT como
-  Fullstack Developer, destacando los proyectos freelance ya entregados (Catan
-  Phones y Velour Fragancias) y demostrando capacidad de aprender e implementar
-  tecnologías modernas de forma autónoma.
+- **Objetivo del portfolio (doble foco):**
+  1. **Vender servicios freelance** — webs y tiendas online a medida (con panel de
+     administración) a comercios/pymes. Sección "Servicios" con paquetes, precios y
+     CTA de WhatsApp; demos en vivo como prueba.
+  2. **Estar abierto a oportunidades** de empleo Fullstack/Backend/Frontend.
+  Se destaca el trabajo real ya entregado (Catan Phones, Velour Fragancias) y la
+  capacidad de aprender e implementar tecnologías modernas de forma autónoma.
+  NOTA: el posicionamiento dejó de ser "junior buscando primera experiencia" — ese
+  encuadre subvaluaba el perfil. Ver el CLAUDE.md maestro en la carpeta padre
+  (`../CLAUDE.md`) para el contexto completo de la operación freelance.
 
 ---
 

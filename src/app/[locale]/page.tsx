@@ -5,6 +5,8 @@ import { Stats } from "@/components/stats";
 import { About } from "@/components/about";
 import { Projects } from "@/components/projects";
 import { Stack } from "@/components/stack";
+import { Services } from "@/components/services";
+import { Testimonials } from "@/components/testimonials";
 import { Contact } from "@/components/contact";
 
 export default async function Home({
@@ -53,6 +55,8 @@ export default async function Home({
       <About />
       <Projects />
       <Stack />
+      <Services />
+      <Testimonials />
       <Contact />
     </main>
   );

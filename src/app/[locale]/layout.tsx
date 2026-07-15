@@ -9,6 +9,7 @@ import { Footer } from "@/components/footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { Cursor } from "@/components/cursor";
+import { WhatsappFab } from "@/components/whatsapp-fab";
 import { SITE_URL, PERSON } from "@/lib/site";
 import "../globals.css";
 
@@ -120,6 +121,7 @@ export default async function LocaleLayout({
           <Header />
           <div className="flex flex-1 flex-col">{children}</div>
           <Footer />
+          <WhatsappFab />
           <Analytics />
         </NextIntlClientProvider>
       </body>

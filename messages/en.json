@@ -1,11 +1,12 @@
 {
   "meta": {
     "title": "Kevin De La Fuente — Fullstack Developer",
-    "description": "Portfolio of Kevin De La Fuente. Fullstack Developer (Java · Spring Boot · Next.js · React). Open to my first formal IT role."
+    "description": "Kevin De La Fuente — Fullstack Developer. I build custom online stores with admin panels. Freelance projects and open to opportunities."
   },
   "nav": {
     "about": "About",
     "projects": "Projects",
+    "services": "Services",
     "stack": "Stack",
     "contact": "Contact",
     "openMenu": "Open menu",
@@ -19,7 +20,7 @@
     "role": "Fullstack Developer",
     "stack": "Java · Spring Boot · Next.js · React",
     "tagline": "I build end-to-end web products.",
-    "subtitle": "Java · Spring Boot · Next.js · React. Open to my first formal IT role.",
+    "subtitle": "Java · Spring Boot · Next.js · React. I build custom web products — freelance and open to opportunities.",
     "ctaPrimary": "See projects",
     "ctaSecondary": "Get in touch"
   },
@@ -97,12 +98,53 @@
     "devops": "DevOps",
     "integrations": "Integrations"
   },
+  "services": {
+    "title": "Services",
+    "subtitle": "Your website or online store with an affordable monthly plan. No big upfront payment.",
+    "monthly": "/mo",
+    "setupLabel": "Setup",
+    "noSetup": "No setup fee",
+    "permanenceLabel": "Minimum term",
+    "monthsUnit": "months",
+    "cta": "Request a quote on WhatsApp",
+    "exteriorNote": "Outside Argentina? I also work per project in USD — message me for a quote.",
+    "plans": {
+      "web": {
+        "name": "Web Presence",
+        "desc": "Custom landing or site with a WhatsApp button. Hosting and domain included."
+      },
+      "store": {
+        "name": "Store + Admin",
+        "desc": "Custom e-commerce with cart, WhatsApp checkout and an admin panel to manage everything yourself."
+      },
+      "maintenance": {
+        "name": "Maintenance",
+        "desc": "Already have a site? Hosting, backups, security and changes: always up to date."
+      }
+    },
+    "demosTitle": "Live templates",
+    "demosSubtitle": "Examples I can adapt to your business in a few days.",
+    "viewDemo": "View demo",
+    "demoSoon": "Soon",
+    "demos": {
+      "barberia": { "name": "Barbershop", "tagline": "WhatsApp bookings" },
+      "gym": { "name": "Gym", "tagline": "Class booking" },
+      "gastro": { "name": "Restaurant", "tagline": "Menu + online order" },
+      "padel": { "name": "Padel", "tagline": "Court booking" },
+      "bazar": { "name": "Bazaar / Shop", "tagline": "Catalog + cart" }
+    }
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "subtitle": "What people who've worked with me say."
+  },
   "contact": {
     "title": "Let's work together",
-    "body": "Available for Fullstack, Backend, Frontend, Junior or Trainee roles — on-site in Mendoza, hybrid or 100% remote.",
+    "body": "Available for freelance projects —custom websites and online stores— and for Fullstack, Backend or Frontend roles. In Mendoza, hybrid or 100% remote.",
     "rolesLabel": "Open to",
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn",
+    "whatsappLabel": "WhatsApp",
     "form": {
       "nameLabel": "Name",
       "emailLabel": "Email",

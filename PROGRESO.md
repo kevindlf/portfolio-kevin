@@ -9,11 +9,11 @@
 
 ## Estado actual
 
-**Fase activa:** Fase 1+2+3 completas · mejoras de impacto hechas (galería, métricas, hero)
-**Última actualización:** 2026-05-29 (sesión 12 — Claude Code)
+**Fase activa:** Servicios freelance (rama `feat/servicios-freelance`) — sección Servicios + WhatsApp integrados
+**Última actualización:** 2026-07-15 (sesión 13 — Claude Code)
 **URL prod:** https://portfolio-kevin-psi.vercel.app
 **Repo:** https://github.com/kevindlf/portfolio-kevin
-**Próxima acción:** Portfolio completo y pulido. Opcional restante: dominio custom (kevindelafuente.dev — mejora entrega Resend + percepción), pasadas impeccable/ui-ux-pro-max (instalar skills). Kevin ya hizo: rotó key Resend, habilitó Analytics, probó form.
+**Próxima acción:** mergear `feat/servicios-freelance` a `main` cuando Kevin apruebe (deploy a prod). Pendientes: URL de bazar-demo en `DEMOS`, testimonios reales, dominio custom (opcional).
 
 ---
 
@@ -390,6 +390,27 @@
 - Hero textos siguen viniendo del server (i18n); HeroIntro solo anima (client)
 
 **Decisiones abiertas:** dominio custom, Twitter handle
+
+---
+
+### Sesión 13 — 2026-07-15 (Claude Code, servicios freelance en rama)
+**Objetivo:** Girar el portfolio a doble foco (freelance + empleo) en rama `feat/servicios-freelance`.
+
+**Hecho:**
+- **Sección Servicios** (`services.tsx`): paquetes/planes con CTA de WhatsApp + demos en vivo (`DEMOS` en `site.ts`: barbería, gym, gastro, pádel con URL; bazar queda "Pronto"). Anchor `#services` en el nav.
+- **WhatsApp integrado**: `WHATSAPP` + `waLink()` en `site.ts` (5492634383534), botón WhatsApp en Contacto, FAB flotante global (`whatsapp-fab.tsx` montado en layout).
+- **Testimonios** (`testimonials.tsx`): sección armada pero **oculta** (array vacío → `return null`). Solo frases reales — pedirlas con plantilla #6 del freelance-kit.
+- Contacto: chips de roles ahora `Freelance · Fullstack · Backend · Frontend` (se quitó "Junior/Trainee").
+- i18n completo ES/EN para servicios/testimonios/WhatsApp. CLAUDE.md del repo actualizado a doble foco.
+- Build de producción OK (Next 16.2.6, TS limpio).
+
+**Pendiente para próxima sesión:**
+- Merge a `main` → deploy prod (decisión de Kevin).
+- URL de bazar-demo cuando se publique; testimonios reales.
+
+**Decisiones tomadas:**
+- Posicionamiento dejó de ser "junior buscando primera experiencia" (subvaluaba el perfil).
+- Trabajo en rama `feat/servicios-freelance`; main solo con aprobación de Kevin.
 
 ---
 

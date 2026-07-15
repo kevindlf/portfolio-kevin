@@ -1,11 +1,12 @@
 {
   "meta": {
     "title": "Kevin De La Fuente — Fullstack Developer",
-    "description": "Portfolio de Kevin De La Fuente. Fullstack Developer (Java · Spring Boot · Next.js · React). Buscando mi primera experiencia formal en IT."
+    "description": "Kevin De La Fuente — Fullstack Developer. Desarrollo tiendas online a medida con panel de administración. Proyectos freelance y abierto a oportunidades."
   },
   "nav": {
     "about": "Sobre mí",
     "projects": "Proyectos",
+    "services": "Servicios",
     "stack": "Stack",
     "contact": "Contacto",
     "openMenu": "Abrir menú",
@@ -19,7 +20,7 @@
     "role": "Fullstack Developer",
     "stack": "Java · Spring Boot · Next.js · React",
     "tagline": "Construyo productos web end-to-end.",
-    "subtitle": "Java · Spring Boot · Next.js · React. Buscando mi primera experiencia formal en IT.",
+    "subtitle": "Java · Spring Boot · Next.js · React. Desarrollo productos web a medida — freelance y abierto a oportunidades.",
     "ctaPrimary": "Ver proyectos",
     "ctaSecondary": "Contactarme"
   },
@@ -97,12 +98,53 @@
     "devops": "DevOps",
     "integrations": "Integraciones"
   },
+  "services": {
+    "title": "Servicios",
+    "subtitle": "Tu web o tienda online con un plan mensual accesible. Sin pagar todo de una.",
+    "monthly": "/mes",
+    "setupLabel": "Inicio",
+    "noSetup": "Sin costo inicial",
+    "permanenceLabel": "Permanencia",
+    "monthsUnit": "meses",
+    "cta": "Pedir presupuesto por WhatsApp",
+    "exteriorNote": "¿Del exterior? También trabajo por proyecto en USD — escribime y te paso presupuesto.",
+    "plans": {
+      "web": {
+        "name": "Web Presencia",
+        "desc": "Landing o web a medida con botón de WhatsApp. Hosting y dominio incluidos."
+      },
+      "store": {
+        "name": "Tienda + Panel",
+        "desc": "E-commerce a medida con carrito, checkout por WhatsApp y panel para gestionar todo vos."
+      },
+      "maintenance": {
+        "name": "Mantenimiento",
+        "desc": "¿Ya tenés web? Hosting, backups, seguridad y cambios: siempre al día."
+      }
+    },
+    "demosTitle": "Plantillas en vivo",
+    "demosSubtitle": "Ejemplos que puedo adaptar a tu negocio en pocos días.",
+    "viewDemo": "Ver demo",
+    "demoSoon": "Pronto",
+    "demos": {
+      "barberia": { "name": "Barbería", "tagline": "Turnos por WhatsApp" },
+      "gym": { "name": "Gimnasio", "tagline": "Reserva de clases" },
+      "gastro": { "name": "Gastronomía", "tagline": "Menú + pedido online" },
+      "padel": { "name": "Pádel", "tagline": "Reserva de canchas" },
+      "bazar": { "name": "Bazar / Tienda", "tagline": "Catálogo + carrito" }
+    }
+  },
+  "testimonials": {
+    "title": "Testimonios",
+    "subtitle": "Lo que dicen quienes ya trabajaron conmigo."
+  },
   "contact": {
     "title": "Trabajemos juntos",
-    "body": "Disponible para roles Fullstack, Backend, Frontend, Junior o Trainee — presencial en Mendoza, híbrido o 100% remoto.",
+    "body": "Disponible para proyectos freelance —webs y tiendas online a medida— y para roles Fullstack, Backend o Frontend. En Mendoza, híbrido o 100% remoto.",
     "rolesLabel": "Abierto a",
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn",
+    "whatsappLabel": "WhatsApp",
     "form": {
       "nameLabel": "Nombre",
       "emailLabel": "Email",

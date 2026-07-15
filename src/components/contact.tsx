@@ -1,10 +1,11 @@
 import { getTranslations } from "next-intl/server";
 import { Reveal } from "./reveal";
 import { ContactForm } from "./contact-form";
+import { waLink } from "@/lib/site";
 
 const EMAIL = "kevindlf2004@gmail.com";
 const LINKEDIN = "https://www.linkedin.com/in/kevindelafuente-729465350/";
-const ROLES = ["Fullstack", "Backend", "Frontend", "Junior", "Trainee"] as const;
+const ROLES = ["Freelance", "Fullstack", "Backend", "Frontend"] as const;
 
 export async function Contact() {
   const t = await getTranslations("contact");
@@ -59,6 +60,17 @@ export async function Contact() {
               className="inline-flex h-10 items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--bg-elevated)] px-5 font-mono text-sm font-medium text-[color:var(--fg)] transition-colors hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
             >
               {t("linkedinLabel")}
+              <span aria-hidden="true" className="ml-2">
+                ↗
+              </span>
+            </a>
+            <a
+              href={waLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-10 items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--bg-elevated)] px-5 font-mono text-sm font-medium text-[color:var(--fg)] transition-colors hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
+            >
+              {t("whatsappLabel")}
               <span aria-hidden="true" className="ml-2">
                 ↗
               </span>
