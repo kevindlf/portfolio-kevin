@@ -2,13 +2,17 @@ import { getTranslations } from "next-intl/server";
 import { Reveal } from "./reveal";
 import { DEMOS, waLink } from "@/lib/site";
 
-// Planes locales (Argentina), en pesos, modelo mensual.
-// setup = null → sin costo inicial. permanence = null → sin permanencia.
+// Planes locales (Argentina), modelo mensual. Los montos viven en messages/*.json
+// (services.plans.<key>.monthly / .setup) para no hardcodearlos acá.
+// hasSetup = false → sin costo inicial. permanence = null → sin permanencia.
 const PLANS = [
-  { key: "web", monthly: "$25.000", setup: null, permanence: 6, featured: false },
-  { key: "store", monthly: "$55.000", setup: "$50.000", permanence: 12, featured: true },
-  { key: "maintenance", monthly: "$50.000", setup: null, permanence: null, featured: false },
+  { key: "web", hasSetup: false, permanence: 6, featured: false },
+  { key: "store", hasSetup: true, permanence: 12, featured: true },
+  { key: "maintenance", hasSetup: false, permanence: null, featured: false },
 ] as const;
+
+// Precios del exterior, por proyecto (USD). Textos en services.exterior.<key>.
+const EXTERIOR = ["landing", "site", "ecommerce", "store"] as const;
 
 export async function Services() {
   const t = await getTranslations("services");
@@ -50,7 +54,7 @@ export async function Services() {
 
               <p className="mt-5">
                 <span className="text-2xl font-semibold text-[color:var(--accent)]">
-                  {plan.monthly}
+                  {t(`plans.${plan.key}.monthly`)}
                 </span>
                 <span className="font-mono text-sm text-[color:var(--fg-muted)]">
                   {t("monthly")}
@@ -61,7 +65,7 @@ export async function Services() {
                 <div className="flex justify-between gap-2">
                   <dt>{t("setupLabel")}</dt>
                   <dd className="text-[color:var(--fg)]">
-                    {plan.setup ?? t("noSetup")}
+                    {plan.hasSetup ? t(`plans.${plan.key}.setup`) : t("noSetup")}
                   </dd>
                 </div>
                 {plan.permanence ? (
@@ -77,9 +81,28 @@ export async function Services() {
           ))}
         </div>
 
-        <p className="mt-4 text-sm text-[color:var(--fg-muted)]">
-          {t("exteriorNote")}
-        </p>
+        {/* Exterior — por proyecto, USD */}
+        <div className="mt-6 rounded-2xl border border-[color:var(--border)] bg-[color:var(--bg-elevated)] p-6">
+          <h3 className="text-sm font-semibold text-[color:var(--fg)]">
+            {t("exteriorTitle")}
+          </h3>
+          <ul className="mt-3 grid gap-2 font-mono text-xs text-[color:var(--fg-muted)] sm:grid-cols-2 lg:grid-cols-4">
+            {EXTERIOR.map((key) => (
+              <li
+                key={key}
+                className="flex justify-between gap-2 rounded-lg border border-[color:var(--border)] px-3 py-2"
+              >
+                <span>{t(`exterior.${key}.name`)}</span>
+                <span className="text-[color:var(--fg)]">
+                  {t(`exterior.${key}.price`)}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-sm text-[color:var(--fg-muted)]">
+            {t("exteriorNote")}
+          </p>
+        </div>
 
         {/* Demos en vivo */}
         <div className="mt-16">

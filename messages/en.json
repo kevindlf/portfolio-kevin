@@ -45,11 +45,18 @@
   "projects": {
     "title": "Projects",
     "liveLabel": "View site",
+    "tryLabel": "Try it live",
     "galleryLabel": "View screenshots",
     "galleryClose": "Close gallery",
     "galleryPrev": "Previous",
     "galleryNext": "Next",
     "galleryCounter": "{current} / {total}",
+    "finanzas": {
+      "name": "Mis Finanzas",
+      "subtitle": "Personal finance app · Own product",
+      "period": "2026 · Live",
+      "description": "Personal finance app built for Argentina's dual-currency reality: expenses in pesos and dollars side by side, consolidated at the day's rate (official/blue/card via dolarapi). Recurring subscriptions and fixed bills entered once and repeated; monthly dashboard of income, spent and still-to-pay, due-date reminders and per-category charts. Supabase backend with Postgres, row-level security (RLS) and email login. Installable as a PWA, with a no-signup demo mode so anyone can try it in seconds."
+    },
     "catan": {
       "name": "Catan Phones",
       "subtitle": "Mobile phone e-commerce · Freelance fullstack",
@@ -107,20 +114,31 @@
     "permanenceLabel": "Minimum term",
     "monthsUnit": "months",
     "cta": "Request a quote on WhatsApp",
-    "exteriorNote": "Outside Argentina? I also work per project in USD — message me for a quote.",
+    "exteriorTitle": "From abroad — per project (USD)",
+    "exteriorNote": "Paid via Payoneer, Wise or USDT. Message me and I'll send a fixed quote.",
     "plans": {
       "web": {
         "name": "Web Presence",
-        "desc": "Custom landing or site with a WhatsApp button. Hosting and domain included."
+        "desc": "Custom landing or site with a WhatsApp button. Hosting and domain included.",
+        "monthly": "$25.000"
       },
       "store": {
         "name": "Store + Admin",
-        "desc": "Custom e-commerce with cart, WhatsApp checkout and an admin panel to manage everything yourself."
+        "desc": "Custom e-commerce with cart, WhatsApp checkout and an admin panel to manage everything yourself.",
+        "monthly": "$55.000",
+        "setup": "$50.000"
       },
       "maintenance": {
         "name": "Maintenance",
-        "desc": "Already have a site? Hosting, backups, security and changes: always up to date."
+        "desc": "Already have a site? Hosting, backups, security and changes: always up to date.",
+        "monthly": "$50.000"
       }
+    },
+    "exterior": {
+      "landing": { "name": "Landing", "price": "from USD 150" },
+      "site": { "name": "Website", "price": "from USD 300" },
+      "ecommerce": { "name": "E-commerce", "price": "from USD 700" },
+      "store": { "name": "Store + Admin", "price": "from USD 1,000" }
     },
     "demosTitle": "Live templates",
     "demosSubtitle": "Examples I can adapt to your business in a few days.",

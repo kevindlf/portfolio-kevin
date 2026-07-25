@@ -45,11 +45,18 @@
   "projects": {
     "title": "Proyectos",
     "liveLabel": "Ver sitio",
+    "tryLabel": "Probala en vivo",
     "galleryLabel": "Ver capturas",
     "galleryClose": "Cerrar galería",
     "galleryPrev": "Anterior",
     "galleryNext": "Siguiente",
     "galleryCounter": "{current} / {total}",
+    "finanzas": {
+      "name": "Mis Finanzas",
+      "subtitle": "App de finanzas personales · Producto propio",
+      "period": "2026 · En vivo",
+      "description": "App de finanzas personales para Argentina: gastos en pesos y dólares conviviendo, con consolidación al cambio del día (oficial/blue/tarjeta vía dolarapi). Suscripciones y pagos fijos que se cargan una vez y se repiten; dashboard mensual de ingresos, gastado y lo que falta pagar, avisos de vencimientos y gráficos por categoría. Backend Supabase con Postgres, seguridad a nivel de fila (RLS) y login por email. Instalable como PWA y con modo demo sin registro: cualquiera la prueba en segundos."
+    },
     "catan": {
       "name": "Catan Phones",
       "subtitle": "E-commerce de celulares · Fullstack freelance",
@@ -107,20 +114,31 @@
     "permanenceLabel": "Permanencia",
     "monthsUnit": "meses",
     "cta": "Pedir presupuesto por WhatsApp",
-    "exteriorNote": "¿Del exterior? También trabajo por proyecto en USD — escribime y te paso presupuesto.",
+    "exteriorTitle": "Desde el exterior — por proyecto (USD)",
+    "exteriorNote": "Cobro por Payoneer, Wise o USDT. Escribime y te paso presupuesto cerrado.",
     "plans": {
       "web": {
         "name": "Web Presencia",
-        "desc": "Landing o web a medida con botón de WhatsApp. Hosting y dominio incluidos."
+        "desc": "Landing o web a medida con botón de WhatsApp. Hosting y dominio incluidos.",
+        "monthly": "$25.000"
       },
       "store": {
         "name": "Tienda + Panel",
-        "desc": "E-commerce a medida con carrito, checkout por WhatsApp y panel para gestionar todo vos."
+        "desc": "E-commerce a medida con carrito, checkout por WhatsApp y panel para gestionar todo vos.",
+        "monthly": "$55.000",
+        "setup": "$50.000"
       },
       "maintenance": {
         "name": "Mantenimiento",
-        "desc": "¿Ya tenés web? Hosting, backups, seguridad y cambios: siempre al día."
+        "desc": "¿Ya tenés web? Hosting, backups, seguridad y cambios: siempre al día.",
+        "monthly": "$50.000"
       }
+    },
+    "exterior": {
+      "landing": { "name": "Landing", "price": "desde USD 150" },
+      "site": { "name": "Sitio", "price": "desde USD 300" },
+      "ecommerce": { "name": "E-commerce", "price": "desde USD 700" },
+      "store": { "name": "Tienda + Panel", "price": "desde USD 1.000" }
     },
     "demosTitle": "Plantillas en vivo",
     "demosSubtitle": "Ejemplos que puedo adaptar a tu negocio en pocos días.",

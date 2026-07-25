@@ -5,11 +5,36 @@ import { ProjectGallery } from "./project-gallery";
 
 const catanShots = Array.from({ length: 13 }, (_, i) => `/projects/catan/${i + 1}.png`);
 const velourShots = Array.from({ length: 11 }, (_, i) => `/projects/velour/${i + 1}.png`);
+// Orden curado: dashboard primero; se omite el gráfico vacío (4.png).
+// 6=Resumen · 5=Recurrentes · 3=Movimientos · 2=Categorías · 1=Ajustes
+const finanzasShots = [6, 5, 3, 2, 1].map((n) => `/projects/finanzas/${n}.png`);
 
 const PROJECTS = [
   {
+    key: "finanzas",
+    url: "https://mis-finanzas-gamma-five.vercel.app/",
+    // App usable con modo demo (sin registro) → CTA "Probala en vivo".
+    demo: true,
+    image: "/projects/finanzas/6.png",
+    gallery: finanzasShots,
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "RLS",
+      "Auth",
+      "Recharts",
+      "Tailwind",
+      "PWA",
+      "Vercel",
+    ],
+  },
+  {
     key: "catan",
     url: "https://catan-phones.vercel.app/",
+    demo: false,
     image: "/projects/catan.png",
     gallery: catanShots,
     stack: [
@@ -34,6 +59,7 @@ const PROJECTS = [
   {
     key: "velour",
     url: "https://perfumeria-essence.vercel.app/",
+    demo: false,
     image: "/projects/velour.png",
     gallery: velourShots,
     stack: [
@@ -91,7 +117,7 @@ export async function Projects() {
         </h2>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {PROJECTS.map(({ key, url, image, gallery, stack }) => (
+          {PROJECTS.map(({ key, url, demo, image, gallery, stack }) => (
             <article
               key={key}
               className="group flex flex-col overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--bg-elevated)] transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-[color:var(--accent)]"
@@ -149,7 +175,7 @@ export async function Projects() {
                   rel="noopener noreferrer"
                   className="inline-flex h-10 w-fit items-center justify-center rounded-full bg-[color:var(--accent)] px-5 font-mono text-sm font-medium text-[color:var(--bg)] transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
                 >
-                  {t("liveLabel")}
+                  {demo ? t("tryLabel") : t("liveLabel")}
                   <span
                     aria-hidden="true"
                     className="ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -157,7 +183,9 @@ export async function Projects() {
                     ↗
                   </span>
                 </a>
-                <ProjectGallery images={gallery} name={t(`${key}.name`)} />
+                {gallery.length > 0 ? (
+                  <ProjectGallery images={gallery} name={t(`${key}.name`)} />
+                ) : null}
               </div>
               </div>
             </article>

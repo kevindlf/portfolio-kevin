@@ -36,10 +36,12 @@ export function waLink(message: string = WHATSAPP_DEFAULT_MSG): string {
 
 // Demos revendibles (viven en ../portfolio-demos, publicadas aparte).
 // Cargar la URL en vivo cuando esté publicada; si queda "", se muestra "Pronto".
-export const DEMOS = [
+// `key` es literal (lo usa i18n); `url` es string para admitir "" (demo sin publicar).
+type DemoKey = "barberia" | "gym" | "gastro" | "padel" | "bazar";
+export const DEMOS: readonly { key: DemoKey; url: string }[] = [
   { key: "barberia", url: "https://barberia-demo-sigma.vercel.app/" },
   { key: "gym", url: "https://gym-demo-chi-two.vercel.app/" },
   { key: "gastro", url: "https://gastro-demo-rho.vercel.app/" },
   { key: "padel", url: "https://padel-demo-beta.vercel.app/" },
-  { key: "bazar", url: "" },
-] as const;
+  { key: "bazar", url: "https://bazar-demo-dusky.vercel.app/" },
+];
